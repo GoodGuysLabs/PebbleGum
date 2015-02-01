@@ -10,10 +10,12 @@
 		4B0C64141A7DB5A400012978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C64131A7DB5A400012978 /* AppDelegate.swift */; };
 		4B0C64171A7DB5A400012978 /* PebbleGum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C64151A7DB5A400012978 /* PebbleGum.xcdatamodeld */; };
 		4B0C64191A7DB5A400012978 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C64181A7DB5A400012978 /* ViewController.swift */; };
-		4B0C641C1A7DB5A400012978 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B0C641A1A7DB5A400012978 /* Main.storyboard */; };
 		4B0C641E1A7DB5A400012978 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B0C641D1A7DB5A400012978 /* Images.xcassets */; };
 		4B0C64211A7DB5A400012978 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B0C641F1A7DB5A400012978 /* LaunchScreen.xib */; };
 		4B0C642D1A7DB5A400012978 /* PebbleGumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C642C1A7DB5A400012978 /* PebbleGumTests.swift */; };
+		4B0C643D1A7DBCE700012978 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C643C1A7DBCE700012978 /* Functions.swift */; };
+		4BF5A1731A7E9E6A008F323A /* PebbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF5A1721A7E9E6A008F323A /* PebbleKit.framework */; };
+		4BF5A1751A7E9E92008F323A /* PebbleVendor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF5A1741A7E9E92008F323A /* PebbleVendor.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,12 +34,15 @@
 		4B0C64131A7DB5A400012978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B0C64161A7DB5A400012978 /* PebbleGum.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PebbleGum.xcdatamodel; sourceTree = "<group>"; };
 		4B0C64181A7DB5A400012978 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4B0C641B1A7DB5A400012978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B0C641D1A7DB5A400012978 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4B0C64201A7DB5A400012978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4B0C64261A7DB5A400012978 /* PebbleGumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PebbleGumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B0C642B1A7DB5A400012978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B0C642C1A7DB5A400012978 /* PebbleGumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PebbleGumTests.swift; sourceTree = "<group>"; };
+		4B0C643C1A7DBCE700012978 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		4B0C643E1A7DC14800012978 /* GoodGuysPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = GoodGuysPlayground.playground; path = PebbleGumTests/GoodGuysPlayground.playground; sourceTree = SOURCE_ROOT; };
+		4BF5A1721A7E9E6A008F323A /* PebbleKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleKit.framework; sourceTree = "<group>"; };
+		4BF5A1741A7E9E92008F323A /* PebbleVendor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleVendor.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BF5A1751A7E9E92008F323A /* PebbleVendor.framework in Frameworks */,
+				4BF5A1731A7E9E6A008F323A /* PebbleKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,12 +86,11 @@
 		4B0C64101A7DB5A400012978 /* PebbleGum */ = {
 			isa = PBXGroup;
 			children = (
-				4B0C64131A7DB5A400012978 /* AppDelegate.swift */,
-				4B0C64181A7DB5A400012978 /* ViewController.swift */,
-				4B0C641A1A7DB5A400012978 /* Main.storyboard */,
-				4B0C641D1A7DB5A400012978 /* Images.xcassets */,
-				4B0C641F1A7DB5A400012978 /* LaunchScreen.xib */,
-				4B0C64151A7DB5A400012978 /* PebbleGum.xcdatamodeld */,
+				4B0C64371A7DB67C00012978 /* Application Delegates */,
+				4B0C64361A7DB66E00012978 /* View Controllers */,
+				4B0C64391A7DB9D800012978 /* Persistence */,
+				4B0C64381A7DB68500012978 /* Graphics */,
+				4BF5A1711A7E9DF5008F323A /* PebbleSDK */,
 				4B0C64111A7DB5A400012978 /* Supporting Files */,
 			);
 			path = PebbleGum;
@@ -93,6 +99,7 @@
 		4B0C64111A7DB5A400012978 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4B0C643E1A7DC14800012978 /* GoodGuysPlayground.playground */,
 				4B0C64121A7DB5A400012978 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -115,6 +122,49 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4B0C64361A7DB66E00012978 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B0C64181A7DB5A400012978 /* ViewController.swift */,
+				4B0C643C1A7DBCE700012978 /* Functions.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4B0C64371A7DB67C00012978 /* Application Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				4B0C64131A7DB5A400012978 /* AppDelegate.swift */,
+			);
+			name = "Application Delegates";
+			sourceTree = "<group>";
+		};
+		4B0C64381A7DB68500012978 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				4B0C641D1A7DB5A400012978 /* Images.xcassets */,
+				4B0C641F1A7DB5A400012978 /* LaunchScreen.xib */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		4B0C64391A7DB9D800012978 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				4B0C64151A7DB5A400012978 /* PebbleGum.xcdatamodeld */,
+			);
+			name = Persistence;
+			sourceTree = "<group>";
+		};
+		4BF5A1711A7E9DF5008F323A /* PebbleSDK */ = {
+			isa = PBXGroup;
+			children = (
+				4BF5A1741A7E9E92008F323A /* PebbleVendor.framework */,
+				4BF5A1721A7E9E6A008F323A /* PebbleKit.framework */,
+			);
+			name = PebbleSDK;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,6 +175,7 @@
 				4B0C640A1A7DB5A400012978 /* Sources */,
 				4B0C640B1A7DB5A400012978 /* Frameworks */,
 				4B0C640C1A7DB5A400012978 /* Resources */,
+				50524F424C454D533F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -195,7 +246,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B0C641C1A7DB5A400012978 /* Main.storyboard in Resources */,
 				4B0C64211A7DB5A400012978 /* LaunchScreen.xib in Resources */,
 				4B0C641E1A7DB5A400012978 /* Images.xcassets in Resources */,
 			);
@@ -210,6 +260,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		50524F424C454D533F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4B0C640A1A7DB5A400012978 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -218,6 +284,7 @@
 				4B0C64191A7DB5A400012978 /* ViewController.swift in Sources */,
 				4B0C64141A7DB5A400012978 /* AppDelegate.swift in Sources */,
 				4B0C64171A7DB5A400012978 /* PebbleGum.xcdatamodeld in Sources */,
+				4B0C643D1A7DBCE700012978 /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,14 +307,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4B0C641A1A7DB5A400012978 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4B0C641B1A7DB5A400012978 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4B0C641F1A7DB5A400012978 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -276,7 +335,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -318,7 +377,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -340,6 +399,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PebbleGum",
+				);
 				INFOPLIST_FILE = PebbleGum/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -350,6 +413,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PebbleGum",
+				);
 				INFOPLIST_FILE = PebbleGum/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -409,6 +476,7 @@
 				4B0C64321A7DB5A400012978 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B0C64331A7DB5A400012978 /* Build configuration list for PBXNativeTarget "PebbleGumTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +485,7 @@
 				4B0C64351A7DB5A400012978 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
