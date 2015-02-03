@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainView: UIView {
+class MainView: UIView, PBPebbleCentralDelegate {
     
     var viewController: MainViewController? = nil
     
@@ -16,9 +16,11 @@ class MainView: UIView {
     {
         super.init(frame: frame)
         
-        // PBDataLoggingService.setDelegateQueue(self)
-        
         self.backgroundColor = UIColor.blackColor()
+        
+        let defaultCentral: PBPebbleCentral = PBPebbleCentral.defaultCentral()
+        defaultCentral.delegate = self
+        println(defaultCentral.lastConnectedWatch())
         
         let myLabel = UILabel(frame: CGRect(x: 0.0, y: frame.size.height/2.0, width: frame.size.width, height: 30.0))
         myLabel.text = NSLocalizedString("Main_Label", comment: "")
