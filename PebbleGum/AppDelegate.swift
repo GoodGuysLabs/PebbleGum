@@ -3,7 +3,7 @@
 //  PebbleGum
 //
 //  Created by Anthony Da Mota on 01/02/15.
-//  Copyright (c) 2015 GoodGuys. All rights reserved.
+//  Copyright (c) 2015 GoodGuysLabs. All rights reserved.
 //
 
 import UIKit
@@ -16,8 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window!.rootViewController = ViewController()
+        
+        let mainController = NavigationController(nibName: nil, bundle: nil)
+        mainController.navController?.pushViewController(MainViewController(nibName: nil, bundle: nil), animated: false)
+        self.window!.rootViewController = mainController.navController
         self.window!.makeKeyAndVisible()
+        
         return true
     }
 

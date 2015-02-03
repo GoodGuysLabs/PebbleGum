@@ -9,13 +9,21 @@
 /* Begin PBXBuildFile section */
 		4B0C64141A7DB5A400012978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C64131A7DB5A400012978 /* AppDelegate.swift */; };
 		4B0C64171A7DB5A400012978 /* PebbleGum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C64151A7DB5A400012978 /* PebbleGum.xcdatamodeld */; };
-		4B0C64191A7DB5A400012978 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C64181A7DB5A400012978 /* ViewController.swift */; };
+		4B0C64191A7DB5A400012978 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C64181A7DB5A400012978 /* MainViewController.swift */; };
 		4B0C641E1A7DB5A400012978 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B0C641D1A7DB5A400012978 /* Images.xcassets */; };
-		4B0C64211A7DB5A400012978 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B0C641F1A7DB5A400012978 /* LaunchScreen.xib */; };
 		4B0C642D1A7DB5A400012978 /* PebbleGumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C642C1A7DB5A400012978 /* PebbleGumTests.swift */; };
 		4B0C643D1A7DBCE700012978 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C643C1A7DBCE700012978 /* Functions.swift */; };
-		4BF5A1731A7E9E6A008F323A /* PebbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF5A1721A7E9E6A008F323A /* PebbleKit.framework */; };
-		4BF5A1751A7E9E92008F323A /* PebbleVendor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF5A1741A7E9E92008F323A /* PebbleVendor.framework */; };
+		4B8DEC821A7FA86500F3E3AD /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC811A7FA86500F3E3AD /* ExternalAccessory.framework */; };
+		4B8DEC841A7FA86C00F3E3AD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC831A7FA86C00F3E3AD /* libz.dylib */; };
+		4B8DEC861A7FA87100F3E3AD /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC851A7FA87100F3E3AD /* CoreBluetooth.framework */; };
+		4B8DEC881A7FA87A00F3E3AD /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC871A7FA87A00F3E3AD /* CoreMotion.framework */; };
+		4B8DEC8A1A7FA87F00F3E3AD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC891A7FA87F00F3E3AD /* MessageUI.framework */; };
+		4B8DEC8D1A7FA9CD00F3E3AD /* PebbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC8C1A7FA9CD00F3E3AD /* PebbleKit.framework */; };
+		4B8DEC8F1A7FA9D300F3E3AD /* PebbleVendor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC8E1A7FA9D300F3E3AD /* PebbleVendor.framework */; };
+		4BD576371A80C4380087C8B0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD576361A80C4380087C8B0 /* MainView.swift */; };
+		4BD576391A80CA360087C8B0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD576381A80CA360087C8B0 /* NavigationController.swift */; };
+		4BD576471A80CFDA0087C8B0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BD576491A80CFDA0087C8B0 /* Localizable.strings */; };
+		4BD576541A80D0B30087C8B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD576561A80D0B30087C8B0 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,16 +41,27 @@
 		4B0C64121A7DB5A400012978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B0C64131A7DB5A400012978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B0C64161A7DB5A400012978 /* PebbleGum.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PebbleGum.xcdatamodel; sourceTree = "<group>"; };
-		4B0C64181A7DB5A400012978 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4B0C64181A7DB5A400012978 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4B0C641D1A7DB5A400012978 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4B0C64201A7DB5A400012978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4B0C64261A7DB5A400012978 /* PebbleGumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PebbleGumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B0C642B1A7DB5A400012978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B0C642C1A7DB5A400012978 /* PebbleGumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PebbleGumTests.swift; sourceTree = "<group>"; };
 		4B0C643C1A7DBCE700012978 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		4B0C643E1A7DC14800012978 /* GoodGuysPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = GoodGuysPlayground.playground; path = PebbleGumTests/GoodGuysPlayground.playground; sourceTree = SOURCE_ROOT; };
-		4BF5A1721A7E9E6A008F323A /* PebbleKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleKit.framework; sourceTree = "<group>"; };
-		4BF5A1741A7E9E92008F323A /* PebbleVendor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleVendor.framework; sourceTree = "<group>"; };
+		4B8DEC811A7FA86500F3E3AD /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		4B8DEC831A7FA86C00F3E3AD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		4B8DEC851A7FA87100F3E3AD /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		4B8DEC871A7FA87A00F3E3AD /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		4B8DEC891A7FA87F00F3E3AD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		4B8DEC8B1A7FA8F200F3E3AD /* PebbleGum-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PebbleGum-Bridging-Header.h"; sourceTree = "<group>"; };
+		4B8DEC8C1A7FA9CD00F3E3AD /* PebbleKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PebbleKit.framework; path = PebbleGum/PebbleKit.framework; sourceTree = "<group>"; };
+		4B8DEC8E1A7FA9D300F3E3AD /* PebbleVendor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PebbleVendor.framework; path = PebbleGum/PebbleVendor.framework; sourceTree = "<group>"; };
+		4BD576361A80C4380087C8B0 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4BD576381A80CA360087C8B0 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		4BD576481A80CFDA0087C8B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4BD5764B1A80D0000087C8B0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4BD576551A80D0B30087C8B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		4BD576591A80D0C50087C8B0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,8 +69,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BF5A1751A7E9E92008F323A /* PebbleVendor.framework in Frameworks */,
-				4BF5A1731A7E9E6A008F323A /* PebbleKit.framework in Frameworks */,
+				4B8DEC8A1A7FA87F00F3E3AD /* MessageUI.framework in Frameworks */,
+				4B8DEC881A7FA87A00F3E3AD /* CoreMotion.framework in Frameworks */,
+				4B8DEC861A7FA87100F3E3AD /* CoreBluetooth.framework in Frameworks */,
+				4B8DEC8D1A7FA9CD00F3E3AD /* PebbleKit.framework in Frameworks */,
+				4B8DEC841A7FA86C00F3E3AD /* libz.dylib in Frameworks */,
+				4B8DEC8F1A7FA9D300F3E3AD /* PebbleVendor.framework in Frameworks */,
+				4B8DEC821A7FA86500F3E3AD /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +92,8 @@
 		4B0C64051A7DB5A400012978 = {
 			isa = PBXGroup;
 			children = (
+				4B0CFF6C1A7FBFD600104AF8 /* Frameworks */,
+				4B8DEC8B1A7FA8F200F3E3AD /* PebbleGum-Bridging-Header.h */,
 				4B0C64101A7DB5A400012978 /* PebbleGum */,
 				4B0C64291A7DB5A400012978 /* PebbleGumTests */,
 				4B0C640F1A7DB5A400012978 /* Products */,
@@ -86,11 +112,10 @@
 		4B0C64101A7DB5A400012978 /* PebbleGum */ = {
 			isa = PBXGroup;
 			children = (
-				4B0C64371A7DB67C00012978 /* Application Delegates */,
-				4B0C64361A7DB66E00012978 /* View Controllers */,
-				4B0C64391A7DB9D800012978 /* Persistence */,
+				4B0C64361A7DB66E00012978 /* Controllers */,
+				4B0C64371A7DB67C00012978 /* Application Delegate */,
+				4B0C64391A7DB9D800012978 /* Model */,
 				4B0C64381A7DB68500012978 /* Graphics */,
-				4BF5A1711A7E9DF5008F323A /* PebbleSDK */,
 				4B0C64111A7DB5A400012978 /* Supporting Files */,
 			);
 			path = PebbleGum;
@@ -101,6 +126,7 @@
 			children = (
 				4B0C643E1A7DC14800012978 /* GoodGuysPlayground.playground */,
 				4B0C64121A7DB5A400012978 /* Info.plist */,
+				4BD576491A80CFDA0087C8B0 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -122,47 +148,54 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4B0C64361A7DB66E00012978 /* View Controllers */ = {
+		4B0C64361A7DB66E00012978 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4B0C64181A7DB5A400012978 /* ViewController.swift */,
+				4BD576381A80CA360087C8B0 /* NavigationController.swift */,
+				4B0C64181A7DB5A400012978 /* MainViewController.swift */,
 				4B0C643C1A7DBCE700012978 /* Functions.swift */,
+				4BD576361A80C4380087C8B0 /* MainView.swift */,
 			);
-			name = "View Controllers";
+			name = Controllers;
 			sourceTree = "<group>";
 		};
-		4B0C64371A7DB67C00012978 /* Application Delegates */ = {
+		4B0C64371A7DB67C00012978 /* Application Delegate */ = {
 			isa = PBXGroup;
 			children = (
 				4B0C64131A7DB5A400012978 /* AppDelegate.swift */,
 			);
-			name = "Application Delegates";
+			name = "Application Delegate";
 			sourceTree = "<group>";
 		};
 		4B0C64381A7DB68500012978 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
 				4B0C641D1A7DB5A400012978 /* Images.xcassets */,
-				4B0C641F1A7DB5A400012978 /* LaunchScreen.xib */,
+				4BD576561A80D0B30087C8B0 /* LaunchScreen.xib */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
 		};
-		4B0C64391A7DB9D800012978 /* Persistence */ = {
+		4B0C64391A7DB9D800012978 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				4B0C64151A7DB5A400012978 /* PebbleGum.xcdatamodeld */,
 			);
-			name = Persistence;
+			name = Model;
 			sourceTree = "<group>";
 		};
-		4BF5A1711A7E9DF5008F323A /* PebbleSDK */ = {
+		4B0CFF6C1A7FBFD600104AF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4BF5A1741A7E9E92008F323A /* PebbleVendor.framework */,
-				4BF5A1721A7E9E6A008F323A /* PebbleKit.framework */,
+				4B8DEC8E1A7FA9D300F3E3AD /* PebbleVendor.framework */,
+				4B8DEC8C1A7FA9CD00F3E3AD /* PebbleKit.framework */,
+				4B8DEC891A7FA87F00F3E3AD /* MessageUI.framework */,
+				4B8DEC871A7FA87A00F3E3AD /* CoreMotion.framework */,
+				4B8DEC851A7FA87100F3E3AD /* CoreBluetooth.framework */,
+				4B8DEC831A7FA86C00F3E3AD /* libz.dylib */,
+				4B8DEC811A7FA86500F3E3AD /* ExternalAccessory.framework */,
 			);
-			name = PebbleSDK;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,7 +208,7 @@
 				4B0C640A1A7DB5A400012978 /* Sources */,
 				4B0C640B1A7DB5A400012978 /* Frameworks */,
 				4B0C640C1A7DB5A400012978 /* Resources */,
-				50524F424C454D533F /* ShellScript */,
+				50524F424C454D533F /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -211,7 +244,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = GoodGuys;
+				ORGANIZATIONNAME = GoodGuysLabs;
 				TargetAttributes = {
 					4B0C640D1A7DB5A400012978 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -229,6 +262,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 4B0C64051A7DB5A400012978;
 			productRefGroup = 4B0C640F1A7DB5A400012978 /* Products */;
@@ -246,7 +280,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B0C64211A7DB5A400012978 /* LaunchScreen.xib in Resources */,
+				4BD576471A80CFDA0087C8B0 /* Localizable.strings in Resources */,
+				4BD576541A80D0B30087C8B0 /* LaunchScreen.xib in Resources */,
 				4B0C641E1A7DB5A400012978 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,13 +296,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		50524F424C454D533F /* ShellScript */ = {
+		50524F424C454D533F /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,7 +317,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B0C64191A7DB5A400012978 /* ViewController.swift in Sources */,
+				4BD576371A80C4380087C8B0 /* MainView.swift in Sources */,
+				4BD576391A80CA360087C8B0 /* NavigationController.swift in Sources */,
+				4B0C64191A7DB5A400012978 /* MainViewController.swift in Sources */,
 				4B0C64141A7DB5A400012978 /* AppDelegate.swift in Sources */,
 				4B0C64171A7DB5A400012978 /* PebbleGum.xcdatamodeld in Sources */,
 				4B0C643D1A7DBCE700012978 /* Functions.swift in Sources */,
@@ -307,10 +345,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4B0C641F1A7DB5A400012978 /* LaunchScreen.xib */ = {
+		4BD576491A80CFDA0087C8B0 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4B0C64201A7DB5A400012978 /* Base */,
+				4BD576481A80CFDA0087C8B0 /* en */,
+				4BD5764B1A80D0000087C8B0 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		4BD576561A80D0B30087C8B0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BD576551A80D0B30087C8B0 /* en */,
+				4BD576591A80D0C50087C8B0 /* fr */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -355,7 +403,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -390,7 +440,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -399,13 +451,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PebbleGum",
+					"$(PROJECT_DIR)",
+					"/Users/AkdM/Desktop/pebble-ios-sdk-master",
 				);
 				INFOPLIST_FILE = PebbleGum/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PebbleGum-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -413,13 +472,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PebbleGum",
+					"$(PROJECT_DIR)",
+					"/Users/AkdM/Desktop/pebble-ios-sdk-master",
 				);
 				INFOPLIST_FILE = PebbleGum/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PebbleGum-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -438,6 +503,7 @@
 				INFOPLIST_FILE = PebbleGumTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PebbleGum.app/PebbleGum";
 			};
 			name = Debug;
@@ -453,6 +519,7 @@
 				INFOPLIST_FILE = PebbleGumTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PebbleGum.app/PebbleGum";
 			};
 			name = Release;
