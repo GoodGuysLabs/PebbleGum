@@ -153,8 +153,8 @@
 			children = (
 				4BD576381A80CA360087C8B0 /* NavigationController.swift */,
 				4B0C64181A7DB5A400012978 /* MainViewController.swift */,
-				4B0C643C1A7DBCE700012978 /* Functions.swift */,
 				4BD576361A80C4380087C8B0 /* MainView.swift */,
+				4B0C643C1A7DBCE700012978 /* Functions.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

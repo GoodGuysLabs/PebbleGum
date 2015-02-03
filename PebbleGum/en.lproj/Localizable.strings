@@ -6,4 +6,8 @@
   Copyright (c) 2015 GoodGuysLabs. All rights reserved.
 */
 
-"Main_Label"            =   "My Label";
+"PebbleGum_Logo"                    =   "Pebble Gum";
+"Pebble_Connected"                  =   "Pebble Connected.";
+"Data_Access_Pair_Pebble"           =   "To access your data, please pair your Pebble with your iPhone.";
+"Recheck_Pebble_Connection"         =   "Tap to recheck Pebble connection";
+"Data_Access_Ok"                    =   "Your Pebble is connected.";
