@@ -29,26 +29,6 @@ class MainView: UIView, PBPebbleCentralDelegate {
         
         var pebbleState = checkPebbleIsConnected()
         
-        
-        
-        /*
-        *
-        * TODO: Ce if-else statement est chargé la première fois que l'on y accède,
-        * on veut que cette view se refresh en appuyant sur le bouton "Recheck_Pebble_Connection" (ligne 67)
-        * Regarder comment faire pour pouvoir recharger cette view
-        *
-        *
-        *   OU
-        *
-        *
-        *   Avoir la liste des périphériques Bluetooth et pouvoir se connecter à celui séléctionné...
-        *
-        *
-        */
-        
-        
-        
-        
         if (pebbleState[2] != "2") {
             // MARK: Label: PebbleGum Logo Configuration
             pebbleGumLogoLabel = UILabel(frame: CGRectMake(frame.width/14, frame.height/7, frame.width - frame.width/7, frame.height/10 ))
@@ -87,14 +67,11 @@ class MainView: UIView, PBPebbleCentralDelegate {
                 tapToRecheckPebbleConnection!.addTarget(self, action: "checkBTConnectionAction:", forControlEvents: UIControlEvents.TouchDown)
             self.addSubview(tapToRecheckPebbleConnection!)
         } else {
-
-            informationLabel = UILabel(frame: CGRectMake(frame.width/14, frame.height/4.5, frame.width - frame.width/7, frame.height/5 ))
-            informationLabel!.numberOfLines = 0
-            informationLabel!.text = NSLocalizedString("Data_Access_Ok", comment: "Access data message if the Pebble watch is connected")
-            informationLabel!.font = UIFont(name: "HelveticaNeue-Thin", size: frame.width/20)
-            informationLabel!.textAlignment = NSTextAlignment.Center
-            informationLabel!.textColor = UIColorFromRGB("FFFFFF", alpha: 1.0)
-            self.addSubview(informationLabel!) // Adding the information label to the view
+            
+            println("?")
+            var afterConnectViewController = MenuViewController(nibName: "MenuViewController", bundle: nil)
+            viewController?.navigationController?.pushViewController(afterConnectViewController, animated: true)
+            
         }
     }
 
@@ -122,7 +99,15 @@ class MainView: UIView, PBPebbleCentralDelegate {
     func checkBTConnectionAction(send: UIButton!)
     {
         println("checkBTConnectionAction: TouchDown")
-        checkPebbleIsConnected()
+        var checkIt = checkPebbleIsConnected()
+   
+        if (checkIt[2] == "2") {
+            var afterConnectViewController = MenuViewController(nibName: "MenuViewController", bundle: nil)
+            viewController?.navigationController?.pushViewController(afterConnectViewController, animated: true)
+        } else {
+            println(":(")
+        }
+        
     }
     
     required init(coder aDecoder: NSCoder)

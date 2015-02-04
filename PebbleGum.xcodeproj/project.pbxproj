@@ -13,6 +13,8 @@
 		4B0C641E1A7DB5A400012978 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B0C641D1A7DB5A400012978 /* Images.xcassets */; };
 		4B0C642D1A7DB5A400012978 /* PebbleGumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C642C1A7DB5A400012978 /* PebbleGumTests.swift */; };
 		4B0C643D1A7DBCE700012978 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C643C1A7DBCE700012978 /* Functions.swift */; };
+		4B36226C1A82BB640021E961 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B36226B1A82BB640021E961 /* MenuViewController.swift */; };
+		4B36226E1A82BBF60021E961 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B36226D1A82BBF60021E961 /* MenuView.swift */; };
 		4B8DEC821A7FA86500F3E3AD /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC811A7FA86500F3E3AD /* ExternalAccessory.framework */; };
 		4B8DEC841A7FA86C00F3E3AD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC831A7FA86C00F3E3AD /* libz.dylib */; };
 		4B8DEC861A7FA87100F3E3AD /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC851A7FA87100F3E3AD /* CoreBluetooth.framework */; };
@@ -48,6 +50,8 @@
 		4B0C642C1A7DB5A400012978 /* PebbleGumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PebbleGumTests.swift; sourceTree = "<group>"; };
 		4B0C643C1A7DBCE700012978 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		4B0C643E1A7DC14800012978 /* GoodGuysPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = GoodGuysPlayground.playground; path = PebbleGumTests/GoodGuysPlayground.playground; sourceTree = SOURCE_ROOT; };
+		4B36226B1A82BB640021E961 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		4B36226D1A82BBF60021E961 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		4B8DEC811A7FA86500F3E3AD /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		4B8DEC831A7FA86C00F3E3AD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		4B8DEC851A7FA87100F3E3AD /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
@@ -152,8 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				4BD576381A80CA360087C8B0 /* NavigationController.swift */,
-				4B0C64181A7DB5A400012978 /* MainViewController.swift */,
-				4BD576361A80C4380087C8B0 /* MainView.swift */,
+				4B36226F1A82DD4C0021E961 /* MainView */,
+				4B3622701A82DD5B0021E961 /* MenuView */,
 				4B0C643C1A7DBCE700012978 /* Functions.swift */,
 			);
 			name = Controllers;
@@ -196,6 +200,24 @@
 				4B8DEC811A7FA86500F3E3AD /* ExternalAccessory.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B36226F1A82DD4C0021E961 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				4B0C64181A7DB5A400012978 /* MainViewController.swift */,
+				4BD576361A80C4380087C8B0 /* MainView.swift */,
+			);
+			name = MainView;
+			sourceTree = "<group>";
+		};
+		4B3622701A82DD5B0021E961 /* MenuView */ = {
+			isa = PBXGroup;
+			children = (
+				4B36226B1A82BB640021E961 /* MenuViewController.swift */,
+				4B36226D1A82BBF60021E961 /* MenuView.swift */,
+			);
+			name = MenuView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,8 +341,10 @@
 			files = (
 				4BD576371A80C4380087C8B0 /* MainView.swift in Sources */,
 				4BD576391A80CA360087C8B0 /* NavigationController.swift in Sources */,
+				4B36226E1A82BBF60021E961 /* MenuView.swift in Sources */,
 				4B0C64191A7DB5A400012978 /* MainViewController.swift in Sources */,
 				4B0C64141A7DB5A400012978 /* AppDelegate.swift in Sources */,
+				4B36226C1A82BB640021E961 /* MenuViewController.swift in Sources */,
 				4B0C64171A7DB5A400012978 /* PebbleGum.xcdatamodeld in Sources */,
 				4B0C643D1A7DBCE700012978 /* Functions.swift in Sources */,
 			);
