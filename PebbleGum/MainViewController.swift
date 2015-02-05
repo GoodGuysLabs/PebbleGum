@@ -8,7 +8,9 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, PBPebbleCentralDelegate {
+    
+    let functions = theFunctions()
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
     {
@@ -17,6 +19,17 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var checkIt = functions.checkPebbleIsConnected()
+        
+        if (checkIt[2] == "2") {
+            println("Yep !")
+            var afterConnectViewController = MenuViewController(nibName: "MenuViewController", bundle: nil)
+            self.navigationController?.pushViewController(afterConnectViewController, animated: true)
+        } else {
+            println("Nope !")
+        }
+        
     }
     
     // MARK: - loadView

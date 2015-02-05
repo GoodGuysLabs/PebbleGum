@@ -9,15 +9,39 @@
 import Foundation
 import UIKit
 
-func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor {
-    var scanner = NSScanner(string:colorCode)
-    var color:UInt32 = 0;
-    scanner.scanHexInt(&color)
+class theFunctions: UIView, PBPebbleCentralDelegate {
+
+    func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor {
+        var scanner = NSScanner(string:colorCode)
+        var color:UInt32 = 0;
+        scanner.scanHexInt(&color)
+        
+        let mask = 0x000000FF
+        let r = CGFloat(Float(Int(color >> 16) & mask)/255.0)
+        let g = CGFloat(Float(Int(color >> 8) & mask)/255.0)
+        let b = CGFloat(Float(Int(color) & mask)/255.0)
+        
+        return UIColor(red: r, green: g, blue: b, alpha: CGFloat(alpha))
+    }
+
+    func checkPebbleIsConnected() -> Dictionary<Int, String>
+    {
+        var code = Dictionary<Int, String>()
+        
+        let defaultCentral: PBPebbleCentral = PBPebbleCentral.defaultCentral()
+        defaultCentral.delegate = self
+        
+        if (( defaultCentral.lastConnectedWatch() ) != nil) {
+            if (defaultCentral.lastConnectedWatch().connected) {
+                code[2] = "2"
+            } else {
+                code[1] = "1"
+            }
+        } else {
+            code[0] = "0"
+        }
+        
+        return code
+    }
     
-    let mask = 0x000000FF
-    let r = CGFloat(Float(Int(color >> 16) & mask)/255.0)
-    let g = CGFloat(Float(Int(color >> 8) & mask)/255.0)
-    let b = CGFloat(Float(Int(color) & mask)/255.0)
-    
-    return UIColor(red: r, green: g, blue: b, alpha: CGFloat(alpha))
 }
