@@ -17,6 +17,10 @@ class MainViewController: UIViewController, PBPebbleCentralDelegate {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
+    override func viewWillAppear(animated: Bool) {
+        self.title = NSLocalizedString("MainViewTitle", comment: "")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,8 +32,7 @@ class MainViewController: UIViewController, PBPebbleCentralDelegate {
             self.navigationController?.pushViewController(afterConnectViewController, animated: true)
         } else {
             println("Nope !")
-        }
-        
+        }   
     }
     
     // MARK: - loadView

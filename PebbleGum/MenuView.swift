@@ -17,12 +17,12 @@ class MenuView: UIView, PBPebbleCentralDelegate {
     {
         super.init(frame: frame)
         
+        println("MenuView")
+
         // MARK: UIImageView: Background Image Configuration
         imageView = UIImageView(frame:CGRectMake(0, 0, frame.width, frame.height))
         imageView!.image = UIImage(named:"background.png")
         self.addSubview(imageView!) // Adding the background image to the view
-        
-        println("Alright, menuView !")
 
     }
 

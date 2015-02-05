@@ -11,3 +11,5 @@
 "Data_Access_Pair_Pebble"           =   "To access your data, please pair your Pebble with your iPhone.";
 "Recheck_Pebble_Connection"         =   "Tap to recheck Pebble connection";
 "Data_Access_Ok"                    =   "Your Pebble is connected.";
+"MainViewTitle"                     =   "Pebble not paired";
+"MenuViewTitle"                     =   "Pebble %@ connected";

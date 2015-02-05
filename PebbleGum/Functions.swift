@@ -44,4 +44,20 @@ class theFunctions: UIView, PBPebbleCentralDelegate {
         return code
     }
     
+    func pebbleInfos() -> AnyObject
+    {
+        var pebbleInformations: AnyObject
+        var pebbleCheck = self.checkPebbleIsConnected()
+        
+        if (pebbleCheck[2] == "2") {
+            let defaultCentral: PBPebbleCentral = PBPebbleCentral.defaultCentral()
+            defaultCentral.delegate = self
+            pebbleInformations = defaultCentral.lastConnectedWatch()
+        } else {
+            pebbleInformations = "Error 1"
+        }
+        
+        return pebbleInformations
+    }
+    
 }
