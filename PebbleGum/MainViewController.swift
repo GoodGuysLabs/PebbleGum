@@ -27,12 +27,9 @@ class MainViewController: UIViewController, PBPebbleCentralDelegate {
         var checkIt = functions.checkPebbleIsConnected()
         
         if (checkIt[2] == "2") {
-            println("Yep !")
             var afterConnectViewController = MenuViewController(nibName: "MenuViewController", bundle: nil)
             self.navigationController?.pushViewController(afterConnectViewController, animated: true)
-        } else {
-            println("Nope !")
-        }   
+        }
     }
     
     // MARK: - loadView

@@ -16,8 +16,6 @@ class MenuView: UIView, PBPebbleCentralDelegate {
     override init(frame: CGRect)
     {
         super.init(frame: frame)
-        
-        println("MenuView")
 
         // MARK: UIImageView: Background Image Configuration
         imageView = UIImageView(frame:CGRectMake(0, 0, frame.width, frame.height))

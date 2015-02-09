@@ -75,10 +75,13 @@ class MainView: UIView, PBPebbleCentralDelegate {
         var checkIt = functions.checkPebbleIsConnected()
 
         if (checkIt[2] == "2") {
-            var afterConnectViewController = MenuViewController(nibName: "MenuViewController", bundle: nil)
-            viewController?.navigationController?.pushViewController(afterConnectViewController, animated: true)
+            let isConnected = JSSAlertView().success(viewController!, title: NSLocalizedString("PebbleConnectedTitle", comment: "Alert UI title when the Pebble is connected after tapping the button"), text: NSLocalizedString("PebbleConnectedMessage", comment: "Alert UI message when the Pebble is connected after tapping the button"))
+            isConnected.addAction({ () -> Void in
+                var afterConnectViewController = MenuViewController(nibName: "MenuViewController", bundle: nil)
+                self.viewController?.navigationController?.pushViewController(afterConnectViewController, animated: true)
+            })
         } else {
-            println(":(")
+            let stillNotConnected = JSSAlertView().danger(viewController!, title: NSLocalizedString("PebbleStillNotConnectedTitle", comment: ""), text: NSLocalizedString("PebbleStillNotConnectedMessage", comment: ""))
         }
 
     }

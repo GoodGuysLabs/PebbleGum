@@ -31,8 +31,11 @@ class MenuViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
     {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        navigationItem.setHidesBackButton(true, animated: false)
+ 
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         
         // Getting the last 4 characters of the Pebble serial number

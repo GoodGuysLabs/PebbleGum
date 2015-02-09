@@ -9,7 +9,11 @@
 "PebbleGum_Logo"                    =   "Pebble Gum";
 "Pebble_Connected"                  =   "Pebble Connected.";
 "Data_Access_Pair_Pebble"           =   "To access your data, please pair your Pebble with your iPhone.";
-"Recheck_Pebble_Connection"         =   "Tap to recheck Pebble connection";
+"Recheck_Pebble_Connection"         =   "Check Pebble connection";
 "Data_Access_Ok"                    =   "Your Pebble is connected.";
 "MainViewTitle"                     =   "Pebble not paired";
-"MenuViewTitle"                     =   "Pebble %@ connected";
+"MenuViewTitle"                     =   "Pebble %@";
+"PebbleStillNotConnectedTitle"      =   "No connection";
+"PebbleStillNotConnectedMessage"    =   "Your Pebble Watch doesn't seem to be paired with your iPhone.\nPlease try again.";
+"PebbleConnectedTitle"              =   "Pebble connected";
+"PebbleConnectedMessage"            =   "Your Pebble is connected, congrats !";

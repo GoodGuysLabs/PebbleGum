@@ -22,6 +22,7 @@
 		4B8DEC8A1A7FA87F00F3E3AD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC891A7FA87F00F3E3AD /* MessageUI.framework */; };
 		4B8DEC8D1A7FA9CD00F3E3AD /* PebbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC8C1A7FA9CD00F3E3AD /* PebbleKit.framework */; };
 		4B8DEC8F1A7FA9D300F3E3AD /* PebbleVendor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC8E1A7FA9D300F3E3AD /* PebbleVendor.framework */; };
+		4BB17AA81A88D4630054DA4B /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB17AA71A88D4630054DA4B /* JSSAlertView.swift */; };
 		4BD576371A80C4380087C8B0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD576361A80C4380087C8B0 /* MainView.swift */; };
 		4BD576391A80CA360087C8B0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD576381A80CA360087C8B0 /* NavigationController.swift */; };
 		4BD576471A80CFDA0087C8B0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BD576491A80CFDA0087C8B0 /* Localizable.strings */; };
@@ -60,6 +61,7 @@
 		4B8DEC8B1A7FA8F200F3E3AD /* PebbleGum-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PebbleGum-Bridging-Header.h"; sourceTree = "<group>"; };
 		4B8DEC8C1A7FA9CD00F3E3AD /* PebbleKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PebbleKit.framework; path = PebbleGum/PebbleKit.framework; sourceTree = "<group>"; };
 		4B8DEC8E1A7FA9D300F3E3AD /* PebbleVendor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PebbleVendor.framework; path = PebbleGum/PebbleVendor.framework; sourceTree = "<group>"; };
+		4BB17AA71A88D4630054DA4B /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
 		4BD576361A80C4380087C8B0 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4BD576381A80CA360087C8B0 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		4BD576481A80CFDA0087C8B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				4B36226F1A82DD4C0021E961 /* MainView */,
 				4B3622701A82DD5B0021E961 /* MenuView */,
 				4B0C643C1A7DBCE700012978 /* Functions.swift */,
+				4BB17AA71A88D4630054DA4B /* JSSAlertView.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				4B0C64191A7DB5A400012978 /* MainViewController.swift in Sources */,
 				4B0C64141A7DB5A400012978 /* AppDelegate.swift in Sources */,
 				4B36226C1A82BB640021E961 /* MenuViewController.swift in Sources */,
+				4BB17AA81A88D4630054DA4B /* JSSAlertView.swift in Sources */,
 				4B0C64171A7DB5A400012978 /* PebbleGum.xcdatamodeld in Sources */,
 				4B0C643D1A7DBCE700012978 /* Functions.swift in Sources */,
 			);
