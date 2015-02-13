@@ -17,3 +17,4 @@
 "PebbleStillNotConnectedMessage"    =   "Your Pebble Watch doesn't seem to be paired with your iPhone.\nPlease try again.";
 "PebbleConnectedTitle"              =   "Pebble connected";
 "PebbleConnectedMessage"            =   "Your Pebble is connected, congrats !";
+"BackMenu"                          =   "Menu";
