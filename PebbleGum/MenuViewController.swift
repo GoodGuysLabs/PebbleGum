@@ -40,7 +40,6 @@ class MenuViewController: UIViewController {
         
         // Passing it to the navbar title
         self.title = String(format: NSLocalizedString("MenuViewTitle", comment: ""), pebbleSNLast4)
- 
     }
 
     override func viewDidLoad() {

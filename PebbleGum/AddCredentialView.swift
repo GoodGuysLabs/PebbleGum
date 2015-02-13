@@ -1,5 +1,5 @@
 //
-//  TrousseauView.swift
+//  AddCredentialView.swift
 //  PebbleGum
 //
 //  Created by Anthony Da Mota on 13/02/15.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class TrousseauView: UIView, PBPebbleCentralDelegate {
+class AddCredentialView: UIView, PBPebbleCentralDelegate {
     
-    var viewController: TrousseauViewController? = nil
+    var viewController: AddCredentialViewController? = nil
     let imageView:UIImageView?
     let functions = theFunctions()
     
@@ -22,6 +22,9 @@ class TrousseauView: UIView, PBPebbleCentralDelegate {
         imageView = UIImageView(frame:CGRectMake(0, 0, frame.width, frame.height))
         imageView!.image = UIImage(named:"background.png")
         self.addSubview(imageView!) // Adding the background image to the view
+        
+        
+        
     }
     
     required init(coder aDecoder: NSCoder)

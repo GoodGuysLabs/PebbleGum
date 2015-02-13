@@ -60,4 +60,10 @@ class theFunctions: UIView, PBPebbleCentralDelegate {
         return pebbleInformations
     }
     
+    func addCredential() -> AnyObject
+    {
+        return ":)"
+        
+    }
+    
 }

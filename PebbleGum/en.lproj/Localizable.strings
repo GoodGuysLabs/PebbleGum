@@ -18,3 +18,8 @@
 "PebbleConnectedTitle"              =   "Pebble connected";
 "PebbleConnectedMessage"            =   "Your Pebble is connected, congrats !";
 "BackMenu"                          =   "Menu";
+"BackKeychain"                      =   "Keychain";
+"Keychain"                          =   "Keychain";
+"Vault"                             =   "Vault";
+"Generate"                          =   "Generate";
+"NewCredential"                     =   "New credential";

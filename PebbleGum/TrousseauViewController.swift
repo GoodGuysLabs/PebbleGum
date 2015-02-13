@@ -18,9 +18,12 @@ class TrousseauViewController: UIViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-//    override func viewWillAppear(animated: Bool) {
-//        
-//    }
+    override func viewWillAppear(animated: Bool) {
+        let backBarButton: UIBarButtonItem = UIBarButtonItem(title: NSLocalizedString("BackKeychain", comment: "Back button title"), style: .Bordered, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = backBarButton
+        let addCredential = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "redirectToAddCredential:")
+        navigationItem.rightBarButtonItem = addCredential
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,13 @@ class TrousseauViewController: UIViewController {
         view.viewController = self
         self.view = view
         println("> TrousseauViewController")
+    }
+    
+    func redirectToAddCredential(sender: UIBarButtonItem!) {
+        
+        var AddCredentialVCRedirect = AddCredentialViewController(nibName: "AddCredentialViewController", bundle: nil)
+        self.navigationController?.pushViewController(AddCredentialVCRedirect, animated: true)
+
     }
 
     override func didReceiveMemoryWarning() {

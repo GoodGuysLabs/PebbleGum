@@ -14,7 +14,11 @@ class MenuView: UIView, PBPebbleCentralDelegate, UITableViewDelegate, UITableVie
     let imageView:UIImageView?
     let functions = theFunctions()
     var tableView: UITableView = UITableView()
-    var items: [String] = ["Trousseau", "Coffre", "Générer"]
+    var items: [String] = [
+                            NSLocalizedString("Keychain", comment: ""),
+                            NSLocalizedString("Vault", comment: ""),
+                            NSLocalizedString("Generate", comment: "")
+                           ]
 
     override init(frame: CGRect)
     {
@@ -81,6 +85,8 @@ class MenuView: UIView, PBPebbleCentralDelegate, UITableViewDelegate, UITableVie
         switch (indexPath.row) {
             case 0:
                 var anotherVC = TrousseauViewController(nibName: "TrousseauViewController", bundle: nil)
+                let backBarButton: UIBarButtonItem = UIBarButtonItem(title: NSLocalizedString("BackMenu", comment: "Back button title"), style: .Bordered, target: nil, action: nil)
+                self.viewController?.navigationItem.backBarButtonItem = backBarButton
                 self.viewController?.navigationController?.pushViewController(anotherVC, animated: true)
                 println(cell?.textLabel?.text)
             case 1:
