@@ -41,7 +41,7 @@ class MenuViewController: UIViewController {
         // Getting the last 4 characters of the Pebble serial number
         var pebbleSNLast4 = String(connectedPebble.serialNumber)
         pebbleSNLast4 = pebbleSNLast4.substringWithRange(Range<String.Index>(start: advance(pebbleSNLast4.endIndex, -4), end: pebbleSNLast4.endIndex))
-        
+
         // Passing it to the navbar title
         self.title = String(format: NSLocalizedString("MenuViewTitle", comment: ""), pebbleSNLast4)
     }

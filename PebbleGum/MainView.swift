@@ -44,7 +44,7 @@ class MainView: UIView, PBPebbleCentralDelegate {
         informationLabel!.textAlignment = NSTextAlignment.Center
         informationLabel!.textColor = functions.UIColorFromRGB("FFFFFF", alpha: 1.0)
         self.addSubview(informationLabel!) // Adding the information label to the view
-        
+
         // MARK: UIImage: Not Connected Pebble
         pebbleNotConnectedImage = UIImage(named: "BluePebbleWatchQuestionMark.png")
         pebbleNotConnectedImageView = UIImageView(image: self.pebbleNotConnectedImage!)

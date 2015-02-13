@@ -7,127 +7,108 @@
 //
 
 import UIKit
-import Realm
 
-// Declaring Passwords class Object
-class Passwords: RLMObject {
-    dynamic var password = ""
-    dynamic var category = RLMArray(objectClassName: Categories.className())
-}
-
-// Declaring Categories class Object
-class Categories: RLMObject {
-    dynamic var categoryName = ""
-}
-
-class MenuView: UIView, PBPebbleCentralDelegate {
+class MenuView: UIView, PBPebbleCentralDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var viewController: MenuViewController? = nil
     let imageView:UIImageView?
     let functions = theFunctions()
-    var inputIt: UITextField? = nil
-    
+    var tableView: UITableView = UITableView()
+    var items: [String] = ["Trousseau", "Coffre", "Générer"]
+
     override init(frame: CGRect)
     {
         super.init(frame: frame)
-        
-        // Creating a new realm object
-        let realm = RLMRealm.defaultRealm()
-        // Starting to write in the DB
-        realm.beginWriteTransaction()
-        
-        // Creating a new Categories object
-        let testCategory = Categories()
-        testCategory.categoryName = "Test Catégorie"
-        
-        // Creating a new Passwords object
-        let testPassword = Passwords()
-        testPassword.password = "topsecret"
-        // Insert the previously created category the the password
-        testPassword.category.addObject(testCategory)
-        
-        // Persist the object to the DB
-        realm.addObject(testPassword)
-        // And write it
-        realm.commitWriteTransaction()
-
-        // Fetching all the passwords
-        let pass = Passwords.allObjects()
-
-        println(pass)
-        
 
         // MARK: UIImageView: Background Image Configuration
         imageView = UIImageView(frame:CGRectMake(0, 0, frame.width, frame.height))
         imageView!.image = UIImage(named:"background.png")
         self.addSubview(imageView!) // Adding the background image to the view
-        
-        inputIt = UITextField(frame: CGRectMake(frame.width/14, frame.height/2, frame.width - frame.width/7, frame.height/12))
-        inputIt!.backgroundColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.12)
-        inputIt!.textColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.8)
-        self.addSubview(inputIt!)
 
-        // MARK: UIButton: Tap To Connected Pebble Label Configuration
-        // Global state
-        var saveValueButton = UIButton(frame: CGRectMake(frame.width/14, frame.height - frame.height/5, frame.width/3, frame.height/12))
-        saveValueButton.setTitle(NSLocalizedString("SaveMe", comment: "SaveMe"), forState: UIControlState.Normal)
-        saveValueButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: frame.width/16)
-        saveValueButton.backgroundColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.12)
-        // Normal state
-        saveValueButton.setTitleColor(functions.UIColorFromRGB("d9d9d9", alpha: 1.0), forState: UIControlState.Normal)
-        // Highlighted state
-        saveValueButton.setTitleColor(functions.UIColorFromRGB("ffffff", alpha: 1.0), forState: UIControlState.Highlighted)
-        saveValueButton.addTarget(self, action: "saveMeAction:", forControlEvents: UIControlEvents.TouchDown)
-        self.addSubview(saveValueButton)
+        // MARK: UIImage: Not Connected Pebble
+        var pebbleNotConnectedImage = UIImage(named: "LightLogoWithoutBG&Text.png")
+        var pebbleNotConnectedImageView = UIImageView(image: pebbleNotConnectedImage)
+        let sizeOfThisImage = pebbleNotConnectedImage!.size
+        let scaleFactor = frame.width / sizeOfThisImage.width
+        let newHeight = sizeOfThisImage.height * scaleFactor
+        pebbleNotConnectedImageView.frame = CGRect(x: (frame.width - frame.width/3)/2, y: 120.0, width: frame.width/3, height: newHeight/3)
+        self.addSubview(pebbleNotConnectedImageView) // Adding the Pebble not connected image to the view
         
-        // MARK: UIButton: Tap To Connected Pebble Label Configuration
-        // Global state
-        var loadValueButton = UIButton(frame: CGRectMake(frame.width - frame.width/2, frame.height - frame.height/5, frame.width/3, frame.height/12))
-        loadValueButton.setTitle(NSLocalizedString("LoadMe", comment: "LoadMe"), forState: UIControlState.Normal)
-        loadValueButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Thin", size: frame.width/16)
-        loadValueButton.backgroundColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.12)
-        // Normal state
-        loadValueButton.setTitleColor(functions.UIColorFromRGB("d9d9d9", alpha: 1.0), forState: UIControlState.Normal)
-        // Highlighted state
-        loadValueButton.setTitleColor(functions.UIColorFromRGB("ffffff", alpha: 1.0), forState: UIControlState.Highlighted)
-        loadValueButton.addTarget(self, action: "loadMeAction:", forControlEvents: UIControlEvents.TouchDown)
-        self.addSubview(loadValueButton)
+        tableView.frame = CGRectMake(0, 300.0, frame.width, frame.height-300.0)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = functions.UIColorFromRGB("FFFFFF", alpha: 0)
+        tableView.separatorColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.2)
+        tableView.scrollEnabled = false
+        
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        self.addSubview(tableView)
         
     }
     
-    func saveMeAction(send: UIButton!) {
-
-        var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        
-        defaults.setObject(self.inputIt!.text, forKey: "myUberSetting")
-        
-        defaults.synchronize()
-        JSSAlertView().success(viewController!, title: "Text Saved", text: String(format: "Congrats nig, your text is now saved: \"%@\"", self.inputIt!.text), buttonText: "Alright, get out of here")
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
     }
     
-    func loadMeAction(send: UIButton!) {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.items.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         
-        var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        cell.textLabel?.text = self.items[indexPath.row]
         
-        if let myUberSettingIsNotNil = defaults.objectForKey("myUberSetting") as? String {
-            println("Is: ")
-            var mySetting = defaults.objectForKey("myUberSetting") as String
-            println(mySetting)
-            JSSAlertView().success(viewController!, title: "HUEHUEHUE", text: String(format: "Saved text: %@", mySetting), buttonText: "wow much knowledge")
-        } else {
-            JSSAlertView().warning(viewController!, title: "No text found", text: "Sheit, where's the text nig ?", buttonText: "The chicken ate it")
+        return cell
+    }
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        self.tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.None)
+        println("You selected cell #\(indexPath.row) !")
+        
+       // var anotherVC: UIViewController
+        var cell = tableView.cellForRowAtIndexPath(indexPath)
+        
+        //var afterConnectViewController = MenuViewController(nibName: "MenuViewController", bundle: nil)
+        //self.navigationController?.pushViewController(afterConnectViewController, animated: true)
+        
+        switch (indexPath.row) {
+            case 0:
+                var anotherVC = TrousseauViewController(nibName: "TrousseauViewController", bundle: nil)
+                self.viewController?.navigationController?.pushViewController(anotherVC, animated: true)
+                println(cell?.textLabel?.text)
+            case 1:
+                println(cell?.textLabel?.text)
+            case 2:
+                println(cell?.textLabel?.text)
+            default:
+                println("Nope")
         }
-        
+
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.12)
+        cell.textLabel?.textColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.8)
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue-UltraLight", size: frame.width/8)
+        cell.textLabel?.highlightedTextColor = functions.UIColorFromRGB("000000", alpha: 1.0)
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        self.endEditing(true)
-    }
+//    func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
+//    
+//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+//        self.endEditing(true)
+//    }
 
     required init(coder aDecoder: NSCoder)
     {

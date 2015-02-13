@@ -22,6 +22,8 @@
 		4B8DEC8A1A7FA87F00F3E3AD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC891A7FA87F00F3E3AD /* MessageUI.framework */; };
 		4B8DEC8D1A7FA9CD00F3E3AD /* PebbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC8C1A7FA9CD00F3E3AD /* PebbleKit.framework */; };
 		4B8DEC8F1A7FA9D300F3E3AD /* PebbleVendor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC8E1A7FA9D300F3E3AD /* PebbleVendor.framework */; };
+		4B925AE01A8E7E630001E3E7 /* TrousseauViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B925ADF1A8E7E630001E3E7 /* TrousseauViewController.swift */; };
+		4B925AE21A8E7EEE0001E3E7 /* TrousseauView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B925AE11A8E7EEE0001E3E7 /* TrousseauView.swift */; };
 		4BB17AA81A88D4630054DA4B /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB17AA71A88D4630054DA4B /* JSSAlertView.swift */; };
 		4BD576371A80C4380087C8B0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD576361A80C4380087C8B0 /* MainView.swift */; };
 		4BD576391A80CA360087C8B0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD576381A80CA360087C8B0 /* NavigationController.swift */; };
@@ -64,6 +66,8 @@
 		4B8DEC8B1A7FA8F200F3E3AD /* PebbleGum-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PebbleGum-Bridging-Header.h"; sourceTree = "<group>"; };
 		4B8DEC8C1A7FA9CD00F3E3AD /* PebbleKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PebbleKit.framework; path = PebbleGum/PebbleKit.framework; sourceTree = "<group>"; };
 		4B8DEC8E1A7FA9D300F3E3AD /* PebbleVendor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PebbleVendor.framework; path = PebbleGum/PebbleVendor.framework; sourceTree = "<group>"; };
+		4B925ADF1A8E7E630001E3E7 /* TrousseauViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrousseauViewController.swift; sourceTree = "<group>"; };
+		4B925AE11A8E7EEE0001E3E7 /* TrousseauView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrousseauView.swift; sourceTree = "<group>"; };
 		4BB17AA71A88D4630054DA4B /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
 		4BD576361A80C4380087C8B0 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4BD576381A80CA360087C8B0 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				4BD576381A80CA360087C8B0 /* NavigationController.swift */,
 				4B36226F1A82DD4C0021E961 /* MainView */,
 				4B3622701A82DD5B0021E961 /* MenuView */,
+				4B925ADE1A8E7E440001E3E7 /* TrousseauView */,
 				4B0C643C1A7DBCE700012978 /* Functions.swift */,
 				4BB17AA71A88D4630054DA4B /* JSSAlertView.swift */,
 			);
@@ -232,6 +237,15 @@
 				4B36226D1A82BBF60021E961 /* MenuView.swift */,
 			);
 			name = MenuView;
+			sourceTree = "<group>";
+		};
+		4B925ADE1A8E7E440001E3E7 /* TrousseauView */ = {
+			isa = PBXGroup;
+			children = (
+				4B925ADF1A8E7E630001E3E7 /* TrousseauViewController.swift */,
+				4B925AE11A8E7EEE0001E3E7 /* TrousseauView.swift */,
+			);
+			name = TrousseauView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +375,8 @@
 				4B36226C1A82BB640021E961 /* MenuViewController.swift in Sources */,
 				4BB17AA81A88D4630054DA4B /* JSSAlertView.swift in Sources */,
 				4BEBC7371A8C034D000BC773 /* RLMSupport.swift in Sources */,
+				4B925AE21A8E7EEE0001E3E7 /* TrousseauView.swift in Sources */,
+				4B925AE01A8E7E630001E3E7 /* TrousseauViewController.swift in Sources */,
 				4B0C64171A7DB5A400012978 /* PebbleGum.xcdatamodeld in Sources */,
 				4B0C643D1A7DBCE700012978 /* Functions.swift in Sources */,
 			);
