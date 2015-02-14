@@ -15,6 +15,8 @@
 		4B0C643D1A7DBCE700012978 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C643C1A7DBCE700012978 /* Functions.swift */; };
 		4B36226C1A82BB640021E961 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B36226B1A82BB640021E961 /* MenuViewController.swift */; };
 		4B36226E1A82BBF60021E961 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B36226D1A82BBF60021E961 /* MenuView.swift */; };
+		4B6726F41A8F7CF200CD0A80 /* FloatLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6726F31A8F7CF200CD0A80 /* FloatLabelTextField.swift */; };
+		4B6726F61A8F826C00CD0A80 /* FloatLabelTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6726F51A8F826C00CD0A80 /* FloatLabelTextView.swift */; };
 		4B8DEC821A7FA86500F3E3AD /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC811A7FA86500F3E3AD /* ExternalAccessory.framework */; };
 		4B8DEC841A7FA86C00F3E3AD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC831A7FA86C00F3E3AD /* libz.dylib */; };
 		4B8DEC861A7FA87100F3E3AD /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC851A7FA87100F3E3AD /* CoreBluetooth.framework */; };
@@ -62,6 +64,8 @@
 		4B0C643E1A7DC14800012978 /* GoodGuysPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = GoodGuysPlayground.playground; path = PebbleGumTests/GoodGuysPlayground.playground; sourceTree = SOURCE_ROOT; };
 		4B36226B1A82BB640021E961 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4B36226D1A82BBF60021E961 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		4B6726F31A8F7CF200CD0A80 /* FloatLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatLabelTextField.swift; sourceTree = "<group>"; };
+		4B6726F51A8F826C00CD0A80 /* FloatLabelTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatLabelTextView.swift; sourceTree = "<group>"; };
 		4B8DEC811A7FA86500F3E3AD /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		4B8DEC831A7FA86C00F3E3AD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		4B8DEC851A7FA87100F3E3AD /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
@@ -75,7 +79,7 @@
 		4B925AE41A8EAFE20001E3E7 /* AddCredentialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCredentialViewController.swift; sourceTree = "<group>"; };
 		4B925AE61A8EAFF80001E3E7 /* AddCredentialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCredentialView.swift; sourceTree = "<group>"; };
 		4B925AE81A8EBAA90001E3E7 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
-		4B925AEA1A8EBABC0001E3E7 /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
+		4B925AEA1A8EBABC0001E3E7 /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontAwesome.swift; path = ../FontAwesome.swift; sourceTree = "<group>"; };
 		4BB17AA71A88D4630054DA4B /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
 		4BD576361A80C4380087C8B0 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4BD576381A80CA360087C8B0 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -120,7 +124,6 @@
 			children = (
 				4B0CFF6C1A7FBFD600104AF8 /* Frameworks */,
 				4B8DEC8B1A7FA8F200F3E3AD /* PebbleGum-Bridging-Header.h */,
-				4B925AEA1A8EBABC0001E3E7 /* FontAwesome.swift */,
 				4B0C64101A7DB5A400012978 /* PebbleGum */,
 				4B0C64291A7DB5A400012978 /* PebbleGumTests */,
 				4B0C640F1A7DB5A400012978 /* Products */,
@@ -182,8 +185,7 @@
 				4B36226F1A82DD4C0021E961 /* MainView */,
 				4B3622701A82DD5B0021E961 /* MenuView */,
 				4B925ADE1A8E7E440001E3E7 /* TrousseauView */,
-				4B0C643C1A7DBCE700012978 /* Functions.swift */,
-				4BB17AA71A88D4630054DA4B /* JSSAlertView.swift */,
+				4B6726F21A8F7CCC00CD0A80 /* Functions */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -247,6 +249,18 @@
 				4B36226D1A82BBF60021E961 /* MenuView.swift */,
 			);
 			name = MenuView;
+			sourceTree = "<group>";
+		};
+		4B6726F21A8F7CCC00CD0A80 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				4B0C643C1A7DBCE700012978 /* Functions.swift */,
+				4B925AEA1A8EBABC0001E3E7 /* FontAwesome.swift */,
+				4BB17AA71A88D4630054DA4B /* JSSAlertView.swift */,
+				4B6726F31A8F7CF200CD0A80 /* FloatLabelTextField.swift */,
+				4B6726F51A8F826C00CD0A80 /* FloatLabelTextView.swift */,
+			);
+			name = Functions;
 			sourceTree = "<group>";
 		};
 		4B925ADE1A8E7E440001E3E7 /* TrousseauView */ = {
@@ -391,8 +405,10 @@
 				4BD576371A80C4380087C8B0 /* MainView.swift in Sources */,
 				4BD576391A80CA360087C8B0 /* NavigationController.swift in Sources */,
 				4B36226E1A82BBF60021E961 /* MenuView.swift in Sources */,
+				4B6726F41A8F7CF200CD0A80 /* FloatLabelTextField.swift in Sources */,
 				4B0C64191A7DB5A400012978 /* MainViewController.swift in Sources */,
 				4B0C64141A7DB5A400012978 /* AppDelegate.swift in Sources */,
+				4B6726F61A8F826C00CD0A80 /* FloatLabelTextView.swift in Sources */,
 				4B36226C1A82BB640021E961 /* MenuViewController.swift in Sources */,
 				4BB17AA81A88D4630054DA4B /* JSSAlertView.swift in Sources */,
 				4BEBC7371A8C034D000BC773 /* RLMSupport.swift in Sources */,

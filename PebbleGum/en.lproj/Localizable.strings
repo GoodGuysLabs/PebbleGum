@@ -23,3 +23,6 @@
 "Vault"                             =   "Vault";
 "Generate"                          =   "Generate";
 "NewCredential"                     =   "New credential";
+"AddCredentialInputTitle"           =   "Credential title";
+"AddCredentialInputLogin"           =   "Email or username";
+"AddCredentialInputPassword"        =   "Password";
