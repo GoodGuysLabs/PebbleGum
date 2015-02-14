@@ -26,6 +26,8 @@
 		4B925AE21A8E7EEE0001E3E7 /* TrousseauView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B925AE11A8E7EEE0001E3E7 /* TrousseauView.swift */; };
 		4B925AE51A8EAFE20001E3E7 /* AddCredentialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B925AE41A8EAFE20001E3E7 /* AddCredentialViewController.swift */; };
 		4B925AE71A8EAFF90001E3E7 /* AddCredentialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B925AE61A8EAFF80001E3E7 /* AddCredentialView.swift */; };
+		4B925AE91A8EBAA90001E3E7 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4B925AE81A8EBAA90001E3E7 /* FontAwesome.otf */; };
+		4B925AEB1A8EBABC0001E3E7 /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B925AEA1A8EBABC0001E3E7 /* FontAwesome.swift */; };
 		4BB17AA81A88D4630054DA4B /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB17AA71A88D4630054DA4B /* JSSAlertView.swift */; };
 		4BD576371A80C4380087C8B0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD576361A80C4380087C8B0 /* MainView.swift */; };
 		4BD576391A80CA360087C8B0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD576381A80CA360087C8B0 /* NavigationController.swift */; };
@@ -72,6 +74,8 @@
 		4B925AE11A8E7EEE0001E3E7 /* TrousseauView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrousseauView.swift; sourceTree = "<group>"; };
 		4B925AE41A8EAFE20001E3E7 /* AddCredentialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCredentialViewController.swift; sourceTree = "<group>"; };
 		4B925AE61A8EAFF80001E3E7 /* AddCredentialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCredentialView.swift; sourceTree = "<group>"; };
+		4B925AE81A8EBAA90001E3E7 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		4B925AEA1A8EBABC0001E3E7 /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
 		4BB17AA71A88D4630054DA4B /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
 		4BD576361A80C4380087C8B0 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4BD576381A80CA360087C8B0 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 			children = (
 				4B0CFF6C1A7FBFD600104AF8 /* Frameworks */,
 				4B8DEC8B1A7FA8F200F3E3AD /* PebbleGum-Bridging-Header.h */,
+				4B925AEA1A8EBABC0001E3E7 /* FontAwesome.swift */,
 				4B0C64101A7DB5A400012978 /* PebbleGum */,
 				4B0C64291A7DB5A400012978 /* PebbleGumTests */,
 				4B0C640F1A7DB5A400012978 /* Products */,
@@ -194,6 +199,7 @@
 		4B0C64381A7DB68500012978 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				4B925AE81A8EBAA90001E3E7 /* FontAwesome.otf */,
 				4B0C641D1A7DB5A400012978 /* Images.xcassets */,
 				4BD576561A80D0B30087C8B0 /* LaunchScreen.xib */,
 			);
@@ -346,6 +352,7 @@
 			files = (
 				4BD576471A80CFDA0087C8B0 /* Localizable.strings in Resources */,
 				4BD576541A80D0B30087C8B0 /* LaunchScreen.xib in Resources */,
+				4B925AE91A8EBAA90001E3E7 /* FontAwesome.otf in Resources */,
 				4B0C641E1A7DB5A400012978 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +398,7 @@
 				4BEBC7371A8C034D000BC773 /* RLMSupport.swift in Sources */,
 				4B925AE51A8EAFE20001E3E7 /* AddCredentialViewController.swift in Sources */,
 				4B925AE21A8E7EEE0001E3E7 /* TrousseauView.swift in Sources */,
+				4B925AEB1A8EBABC0001E3E7 /* FontAwesome.swift in Sources */,
 				4B925AE01A8E7E630001E3E7 /* TrousseauViewController.swift in Sources */,
 				4B925AE71A8EAFF90001E3E7 /* AddCredentialView.swift in Sources */,
 				4B0C64171A7DB5A400012978 /* PebbleGum.xcdatamodeld in Sources */,

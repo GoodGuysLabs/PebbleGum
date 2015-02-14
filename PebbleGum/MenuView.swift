@@ -106,15 +106,6 @@ class MenuView: UIView, PBPebbleCentralDelegate, UITableViewDelegate, UITableVie
         cell.textLabel?.font = UIFont(name: "HelveticaNeue-UltraLight", size: frame.width/8)
         cell.textLabel?.highlightedTextColor = functions.UIColorFromRGB("000000", alpha: 1.0)
     }
-    
-//    func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
-//    
-//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-//        self.endEditing(true)
-//    }
 
     required init(coder aDecoder: NSCoder)
     {
