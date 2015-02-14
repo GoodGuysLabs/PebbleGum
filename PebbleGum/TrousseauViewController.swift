@@ -39,10 +39,8 @@ class TrousseauViewController: UIViewController {
     }
     
     func redirectToAddCredential(sender: UIBarButtonItem!) {
-        
         var AddCredentialVCRedirect = AddCredentialViewController(nibName: "AddCredentialViewController", bundle: nil)
         self.navigationController?.pushViewController(AddCredentialVCRedirect, animated: true)
-
     }
 
     override func didReceiveMemoryWarning() {

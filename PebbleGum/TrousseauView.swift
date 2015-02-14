@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Realm
 
-class TrousseauView: UIView, PBPebbleCentralDelegate {
+class TrousseauView: UIView, PBPebbleCentralDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var viewController: TrousseauViewController? = nil
     let imageView:UIImageView?
     let functions = theFunctions()
+    var tableView: UITableView = UITableView()
+    let credentials = Credential.allObjects()
     
     override init(frame: CGRect)
     {
@@ -22,6 +25,58 @@ class TrousseauView: UIView, PBPebbleCentralDelegate {
         imageView = UIImageView(frame:CGRectMake(0, 0, frame.width, frame.height))
         imageView!.image = UIImage(named:"background.png")
         self.addSubview(imageView!) // Adding the background image to the view
+        
+        tableView.frame = CGRectMake(0, 80.0, frame.width, frame.height - 80.0)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = functions.UIColorFromRGB("FFFFFF", alpha: 0)
+        tableView.separatorColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.2)
+        tableView.scrollEnabled = false
+        
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        self.addSubview(tableView)
+    }
+    
+//    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 0
+//    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 40
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let numberOfResult = self.credentials.count
+        
+        return Int(numberOfResult)
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        
+        let cred: Credential = credentials.objectAtIndex(UInt(indexPath.row)) as Credential
+        cell.textLabel?.text = cred.credentialTitle
+
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.None)
+        println("You selected cell #\(indexPath.row) !")
+        
+        let cred: Credential = credentials.objectAtIndex(UInt(indexPath.row)) as Credential
+        
+        println(cred.credentialEmail)
+        
+        
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.12)
+        cell.textLabel?.textColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.8)
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: frame.width/14)
+        cell.textLabel?.highlightedTextColor = functions.UIColorFromRGB("000000", alpha: 1.0)
     }
     
     required init(coder aDecoder: NSCoder)

@@ -37,7 +37,7 @@ class MenuView: UIView, PBPebbleCentralDelegate, UITableViewDelegate, UITableVie
         let newHeight = sizeOfThisImage.height * scaleFactor
         pebbleNotConnectedImageView.frame = CGRect(x: (frame.width - frame.width/3)/2, y: 120.0, width: frame.width/3, height: newHeight/3)
         self.addSubview(pebbleNotConnectedImageView) // Adding the Pebble not connected image to the view
-        
+
         tableView.frame = CGRectMake(0, 300.0, frame.width, frame.height-300.0)
         tableView.delegate = self
         tableView.dataSource = self

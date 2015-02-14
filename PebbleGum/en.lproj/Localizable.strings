@@ -12,7 +12,7 @@
 "Recheck_Pebble_Connection"         =   "Check Pebble connection";
 "Data_Access_Ok"                    =   "Your Pebble is connected.";
 "MainViewTitle"                     =   "Pebble not paired";
-"MenuViewTitle"                     =   "Pebble %@";
+"MenuViewTitle"                     =   "Pebble %@ connected";
 "PebbleStillNotConnectedTitle"      =   "No connection";
 "PebbleStillNotConnectedMessage"    =   "Your Pebble Watch doesn't seem to be paired with your iPhone.\nPlease try again.";
 "PebbleConnectedTitle"              =   "Pebble connected";
@@ -26,3 +26,4 @@
 "AddCredentialInputTitle"           =   "Credential title";
 "AddCredentialInputLogin"           =   "Email or username";
 "AddCredentialInputPassword"        =   "Password";
+"AddCredentialInputNotes"           =   "Add Notes";

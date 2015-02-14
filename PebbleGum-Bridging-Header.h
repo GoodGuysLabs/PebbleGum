@@ -7,3 +7,4 @@
 //
 
 #import <PebbleKit/PebbleKit.h>
+#import "IQKeyBoardManager.h"
