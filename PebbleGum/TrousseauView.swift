@@ -90,7 +90,7 @@ class TrousseauView: UIView, PBPebbleCentralDelegate, UITableViewDelegate, UITab
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
     }
-    
+
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.backgroundColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.12)
         cell.textLabel?.textColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.8)

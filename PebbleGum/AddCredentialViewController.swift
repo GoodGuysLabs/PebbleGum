@@ -112,10 +112,15 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
 
         let realm = RLMRealm.defaultRealm()
         let getCredentials = Credential.allObjects()
-        let crementalId = getCredentials.lastObject() as Credential
-
         let newCredential = Credential()
-        newCredential.credentialId = crementalId.credentialId + 1
+        
+        if ( getCredentials.count != 0 ) {
+            let crementalId: AnyObject = getCredentials.lastObject() as Credential
+            newCredential.credentialId = crementalId.credentialId + 1
+        } else {
+            newCredential.credentialId = 0
+        }
+
         newCredential.credentialTitle = inputTitle.text
         newCredential.credentialEmail = inputEmail.text
         newCredential.credentialPassword = inputPassword.text
