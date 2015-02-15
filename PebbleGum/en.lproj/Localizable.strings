@@ -31,3 +31,5 @@
 "AlertDeleteCredentialMessage"      =   "Are you sure you want to delete \"%@\" ?";
 "CredentialAddedTitle"              =   "Credential added";
 "CredentialAddedMessage"            =   "\"%@\" was added to your keychain";
+"CredentialModifiedTitle"           =   "Credential modified";
+"CredentialModifiedMessage"         =   "\"%@\" has been modified";

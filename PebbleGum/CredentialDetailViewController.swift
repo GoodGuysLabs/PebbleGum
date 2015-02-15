@@ -138,53 +138,41 @@ class CredentialDetailViewController: UIViewController, UITextFieldDelegate, UIT
     }
     
     func AddCredentialCheck(sender: AnyObject) {
-
         
-        println("En dev")
+        println(selectedIcon)
         
-//        let realm = RLMRealm.defaultRealm()
-//        let getCredentials = Credential.allObjects()
-//        let newCredential = Credential()
-//        var theCategory:RLMResults
-//        
-//        if (selectedIcon != "") {
-//            theCategory = Category.objectsWhere("categoryName = %@", selectedIcon)
-//        } else {
-//            theCategory = Category.objectsWhere("categoryName = 'Apple'")
-//        }
-//        let categoryObject:Category = theCategory.firstObject() as Category
-//        
-//        if ( getCredentials.count != 0 ) {
-//            let crementalId: AnyObject = getCredentials.lastObject() as Credential
-//            newCredential.credentialId = crementalId.credentialId + 1
-//        } else {
-//            newCredential.credentialId = 0
-//        }
-//        
-//        // Find the object to update
-//        var updateCredential = Credential.objectsWhere("credentialId = %d", credId)
-//        // Casting it to write it
-//        var updateObject = updateCredential as Credential
-//        
-//        updateCredential.credentialTitle = inputTitle.text as Credential
-//        updateCredential.credentialEmail = inputEmail.text
-//        updateCredential.credentialPassword = inputPassword.text
-//        updateCredential.credentialNotes = inputNotes.text
-//        updateCredential.category = categoryObject
-//        
-//        realm.beginWriteTransaction()
-//        realm.addOrUpdateObject(newCredential)
-//        realm.commitWriteTransaction()
-//        
-//        let confirmEntry = JSSAlertView().success(self,
-//            title: String(format: NSLocalizedString("CredentialAddedTitle", comment: "Alert UI title when creating a new credential entry after tapping the button Done")),
-//            text: String(format: NSLocalizedString("CredentialAddedMessage", comment: "Alert UI message when creating a new credential entry after tapping the button Done"), inputTitle.text)
-//        )
-//        
-//        confirmEntry.addAction({ () -> Void in
-//            var afterEntryRedirect = TrousseauViewController(nibName: "TrousseauViewController", bundle: nil)
-//            self.navigationController?.popViewControllerAnimated(true)
-//        })
+        let realm = RLMRealm.defaultRealm()
+        var theCategory:RLMResults
+        
+        if (selectedIcon != "") {
+            theCategory = Category.objectsWhere("categoryName = %@", selectedIcon)
+        } else {
+            theCategory = Category.objectsWhere("categoryName = 'Apple'")
+        }
+        let categoryObject:Category = theCategory.firstObject() as Category
+        
+        let updateCredential = Credential()
+        
+        updateCredential.credentialId = credId
+        updateCredential.credentialTitle = inputTitle.text
+        updateCredential.credentialEmail = inputEmail.text
+        updateCredential.credentialPassword = inputPassword.text
+        updateCredential.credentialNotes = inputNotes.text
+        updateCredential.category = categoryObject
+        
+        realm.beginWriteTransaction()
+        realm.addOrUpdateObject(updateCredential)
+        realm.commitWriteTransaction()
+        
+        let confirmEntry = JSSAlertView().success(self,
+            title: String(format: NSLocalizedString("CredentialModifiedTitle", comment: "Alert UI title when modyfing a credential after tapping the button Done")),
+            text: String(format: NSLocalizedString("CredentialModifiedMessage", comment: "Alert UI message when modyfing a credential after tapping the button Done"), inputTitle.text)
+        )
+        
+        confirmEntry.addAction({ () -> Void in
+            var afterEntryRedirect = TrousseauViewController(nibName: "TrousseauViewController", bundle: nil)
+            self.navigationController?.popViewControllerAnimated(true)
+        })
     }
     
     func TextDidBeginEditing(sender: AnyObject) {
