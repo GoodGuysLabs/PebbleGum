@@ -15,6 +15,8 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
     let connectedPebble: AnyObject = theFunctions().pebbleInfos()
     var inputTitle:FloatLabelTextField!
     var categoryPicker:UIPickerView!
+    var selectedIcon:String = ""
+    var keychainNewIcon:UILabel!
     var inputEmail:FloatLabelTextField!
     var inputPassword:FloatLabelTextField!
     var inputNotes:UITextView!
@@ -35,10 +37,10 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
         navigationItem.rightBarButtonItem = addCredentialCheckButton
         
         // Keychain icon font
-        var keychainNewIcon:UILabel! = UILabel(frame: CGRectMake(self.view.frame.width/14, self.view.frame.height/7, self.view.frame.width - self.view.frame.width/7, self.view.frame.height/10))
+        keychainNewIcon = UILabel(frame: CGRectMake(self.view.frame.width/14, self.view.frame.height/7, self.view.frame.width - self.view.frame.width/7, self.view.frame.height/10))
         keychainNewIcon.font = UIFont.fontAwesomeOfSize(self.view.frame.height/10)
         keychainNewIcon.textColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.7)
-        keychainNewIcon.text = String.fontAwesomeIconWithName("fa-key")
+        keychainNewIcon.text = String.fontAwesomeIconWithName("fa-apple")
         self.view.addSubview(keychainNewIcon)
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "TextDidBeginEditing:", name: UITextFieldTextDidBeginEditingNotification, object: nil)
@@ -119,9 +121,15 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
         let realm = RLMRealm.defaultRealm()
         let getCredentials = Credential.allObjects()
         let newCredential = Credential()
-        let theCategory = Category.allObjects().firstObject() as Category
-        // let catName = theCategory.categoryName
-        
+        var theCategory:RLMResults
+
+        if (selectedIcon != "") {
+            theCategory = Category.objectsWhere("categoryName = %@", selectedIcon)
+        } else {
+            theCategory = Category.objectsWhere("categoryName = 'Apple'")
+        }
+        let categoryObject:Category = theCategory.firstObject() as Category
+
         if ( getCredentials.count != 0 ) {
             let crementalId: AnyObject = getCredentials.lastObject() as Credential
             newCredential.credentialId = crementalId.credentialId + 1
@@ -133,8 +141,7 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
         newCredential.credentialEmail = inputEmail.text
         newCredential.credentialPassword = inputPassword.text
         newCredential.credentialNotes = inputNotes.text
-        newCredential.category = theCategory
-//        newCredential.category = catName
+        newCredential.category = categoryObject
 
         realm.beginWriteTransaction()
         realm.addOrUpdateObject(newCredential)
@@ -198,7 +205,12 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        println("GOT IT")
+        
+        let cat: Category = theCategories.objectAtIndex(UInt(row)) as Category
+        var catIcon = cat.categoryIcon
+        
+        keychainNewIcon.text = String.fontAwesomeIconWithName(catIcon)
+        selectedIcon = cat.categoryName
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {

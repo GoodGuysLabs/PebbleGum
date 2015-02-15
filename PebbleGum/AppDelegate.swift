@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 "Steam":        "fa-steam",
                 "Twitch":       "fa-twitch",
                 "Twitter":      "fa-twitter",
-                "Vimeo":        "fa-vimeo",
+                "Vimeo":        "fa-vimeo-square",
                 "Vine":         "fa-vine",
                 "VK":           "fa-vk",
                 "WhatsApp":     "fa-whatsapp",
@@ -84,8 +84,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
         }
-        
-        println(Category.allObjects())
         
         return true
     }
