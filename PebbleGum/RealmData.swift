@@ -10,8 +10,13 @@ import Foundation
 import Realm
 
 class Credential: RLMObject {
+    dynamic var credentialId = 0
     dynamic var credentialTitle = ""
     dynamic var credentialEmail = ""
     dynamic var credentialPassword = ""
     dynamic var credentialNotes = ""
+    
+    override class func primaryKey() -> String! {
+        return "credentialId"
+    }
 }

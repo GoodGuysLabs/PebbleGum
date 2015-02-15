@@ -31,5 +31,4 @@ class AddCredentialView: UIView, PBPebbleCentralDelegate {
     {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

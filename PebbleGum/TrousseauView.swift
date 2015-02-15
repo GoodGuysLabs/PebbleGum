@@ -14,6 +14,7 @@ class TrousseauView: UIView, PBPebbleCentralDelegate, UITableViewDelegate, UITab
     var viewController: TrousseauViewController? = nil
     let imageView:UIImageView?
     let functions = theFunctions()
+    var keychainLabel:UILabel!
     var tableView: UITableView = UITableView()
     let credentials = Credential.allObjects()
     
@@ -26,24 +27,31 @@ class TrousseauView: UIView, PBPebbleCentralDelegate, UITableViewDelegate, UITab
         imageView!.image = UIImage(named:"background.png")
         self.addSubview(imageView!) // Adding the background image to the view
         
-        tableView.frame = CGRectMake(0, 80.0, frame.width, frame.height - 80.0)
+        // MARK: Label: PebbleGum Logo Configuration
+        keychainLabel = UILabel(frame: CGRectMake(frame.width/14, frame.height/7, frame.width - frame.width/7, frame.height/10 ))
+        keychainLabel.text = NSLocalizedString("Keychain", comment: "")
+        keychainLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: frame.width/6)
+        keychainLabel.textAlignment = NSTextAlignment.Center
+        keychainLabel.textColor = functions.UIColorFromRGB("FFFFFF", alpha: 1.0)
+        self.addSubview(keychainLabel) // Adding the Pebble Gum logo to the view
+        
+        tableView.frame = CGRectMake(0, keychainLabel.frame.origin.y + frame.height/10 + 40.0, frame.width, frame.height - keychainLabel.frame.origin.y - frame.height/10 - 40.0)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = functions.UIColorFromRGB("FFFFFF", alpha: 0)
+        tableView.backgroundColor = UIColor.clearColor()
         tableView.separatorColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.2)
-        tableView.scrollEnabled = false
         
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         self.addSubview(tableView)
     }
     
-//    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 0
-//    }
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+    }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 40
+        return 80
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,14 +76,25 @@ class TrousseauView: UIView, PBPebbleCentralDelegate, UITableViewDelegate, UITab
         let cred: Credential = credentials.objectAtIndex(UInt(indexPath.row)) as Credential
         
         println(cred.credentialEmail)
-        
-        
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            let cred: Credential = credentials.objectAtIndex(UInt(indexPath.row)) as Credential
+            let realm = RLMRealm.defaultRealm()
+            var credentialToDelete = Credential.objectsWhere("credentialId = %d", cred.credentialId)
+            realm.beginWriteTransaction()
+            realm.deleteObject(credentialToDelete.firstObject() as RLMObject)
+            realm.commitWriteTransaction()
+
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.backgroundColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.12)
         cell.textLabel?.textColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.8)
-        cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: frame.width/14)
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue-UltraLight", size: frame.width/14)
         cell.textLabel?.highlightedTextColor = functions.UIColorFromRGB("000000", alpha: 1.0)
     }
     

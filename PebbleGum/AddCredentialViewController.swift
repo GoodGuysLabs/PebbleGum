@@ -29,8 +29,8 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
     }
     
     override func viewWillAppear(animated: Bool) {
-        let addCredentialCheck = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "AddCredentialCheck:")
-        navigationItem.rightBarButtonItem = addCredentialCheck
+        let addCredentialCheckButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "AddCredentialCheck:")
+        navigationItem.rightBarButtonItem = addCredentialCheckButton
         
         // Keychain icon font
         var keychainNewIcon:UILabel! = UILabel(frame: CGRectMake(self.view.frame.width/14, self.view.frame.height/7, self.view.frame.width - self.view.frame.width/7, self.view.frame.height/10))
@@ -38,10 +38,10 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
         keychainNewIcon.textColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.7)
         keychainNewIcon.text = String.fontAwesomeIconWithName("fa-key")
         self.view.addSubview(keychainNewIcon)
-        
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "TextDidBeginEditing:", name: UITextFieldTextDidBeginEditingNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "TextDidEndEditing:", name: UITextFieldTextDidEndEditingNotification, object: nil)
-        
+
         // Credential Input Title
         inputTitle = FloatLabelTextField(frame: CGRectMake(self.view.frame.width - self.view.frame.width/1.5, self.view.frame.height/6, self.view.frame.width - self.view.frame.width/2.3, self.view.frame.height/14))
         inputTitle.attributedPlaceholder = NSAttributedString(string: String(format: NSLocalizedString("AddCredentialInputTitle", comment: "")), attributes:[NSForegroundColorAttributeName: theFunctions().UIColorFromRGB("D1CCC0", alpha: 0.8)])
@@ -53,7 +53,7 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
         inputTitle.clearButtonMode = UITextFieldViewMode.WhileEditing
         inputTitle.keyboardAppearance = .Dark
         self.view.addSubview(inputTitle)
-        
+
         // Credential Input Email/Username
         inputEmail = FloatLabelTextField(frame: CGRectMake(self.view.frame.width/14, self.view.frame.height/3, self.view.frame.width - self.view.frame.width/6, self.view.frame.height/14))
         inputEmail.attributedPlaceholder = NSAttributedString(string: String(format: NSLocalizedString("AddCredentialInputLogin", comment: "")), attributes:[NSForegroundColorAttributeName: theFunctions().UIColorFromRGB("D1CCC0", alpha: 0.8)])
@@ -84,7 +84,7 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
         inputPassword.secureTextEntry = true
         inputPassword.tag = 3
         self.view.addSubview(inputPassword)
-        
+
         // Credential Input Notes
         inputNotes = UITextView(frame: CGRectMake(self.view.frame.width/14, self.view.frame.height/1.65, self.view.frame.width - self.view.frame.width/6, self.view.frame.height/7))
         inputNotes.delegate = self
@@ -94,7 +94,7 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
         inputNotes.keyboardAppearance = .Dark
         inputNotes.tag = 4
         self.view.addSubview(inputNotes)
-        
+
         println(Credential.allObjects())
 
     }
@@ -109,21 +109,28 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
     }
     
     func AddCredentialCheck(sender: AnyObject) {
-        
+
         let realm = RLMRealm.defaultRealm()
-        
+        let getCredentials = Credential.allObjects()
+        let crementalId = getCredentials.lastObject() as Credential
+
         let newCredential = Credential()
+        newCredential.credentialId = crementalId.credentialId + 1
         newCredential.credentialTitle = inputTitle.text
         newCredential.credentialEmail = inputEmail.text
         newCredential.credentialPassword = inputPassword.text
         newCredential.credentialNotes = inputNotes.text
         
         realm.beginWriteTransaction()
-        realm.addObject(newCredential)
+        realm.addOrUpdateObject(newCredential)
         realm.commitWriteTransaction()
         
-        println("Those are the actual datas:")
-        println(Credential.allObjects())
+        let confirmEntry = JSSAlertView().success(self, title: NSLocalizedString("CredentialAdded", comment: "Alert UI title when creating a new credential entry after tapping the button Done"))
+
+        confirmEntry.addAction({ () -> Void in
+            var afterEntryRedirect = TrousseauViewController(nibName: "TrousseauViewController", bundle: nil)
+            self.navigationController?.popViewControllerAnimated(true)
+        })
     }
     
     func TextDidBeginEditing(sender: AnyObject) {
@@ -155,7 +162,7 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
         if (theTextField.tag == 3) {
             theTextField.secureTextEntry = true
         }
-        
+
     }
     
     func textViewDidBeginEditing(textView: UITextView) {
