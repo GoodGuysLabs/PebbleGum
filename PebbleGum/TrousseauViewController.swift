@@ -61,33 +61,3 @@ class TrousseauViewController: UIViewController {
     }
     
 }
-
-
-//class CustomCell: UITableViewCell {
-//    
-//    var theLabel:UILabel?
-//
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//        
-//        self.theLabel?.frame = CGRectMake(80, 0, 250, 80)
-//        
-//    }
-////    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
-////        super.init(style: UITableViewCellStyle.Value1, reuseIdentifier: reuseIdentifier)
-////    }
-////
-////    required init(coder aDecoder: NSCoder) {
-////        fatalError("init(coder:) has not been implemented")
-////    }
-//    
-////    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-////        var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-////        
-////        theLabel?.frame = CGRectMake(80, 0, 250, 80)
-////        
-////        return cell
-////    }
-//    
-//    
-//}

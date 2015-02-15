@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 "Bitbucket":    "fa-bitbucket-square",
                 "Codepen":      "fa-codepen",
                 "Database":     "fa-database",
-                "DeviantArt":   "fa-devianart",
+                "DeviantArt":   "fa-deviantart",
                 "Digg":         "fa-digg",
                 "Dropbox":      "fa-dropbox",
                 "Email":        "fa-envelope-square",

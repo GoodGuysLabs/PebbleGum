@@ -10,23 +10,23 @@ import UIKit
 import Realm
 
 class TrousseauView: UIView, PBPebbleCentralDelegate, UITableViewDelegate, UITableViewDataSource {
-    
+
     var viewController: TrousseauViewController? = nil
     let imageView:UIImageView?
     let functions = theFunctions()
     var keychainLabel:UILabel!
     var tableView: UITableView = UITableView()
     let credentials = Credential.allObjects()
-    
+
     override init(frame: CGRect)
     {
         super.init(frame: frame)
-        
+
         // MARK: UIImageView: Background Image Configuration
         imageView = UIImageView(frame:CGRectMake(0, 0, frame.width, frame.height))
         imageView!.image = UIImage(named:"background.png")
         self.addSubview(imageView!) // Adding the background image to the view
-        
+
         // MARK: Label: PebbleGum Logo Configuration
         keychainLabel = UILabel(frame: CGRectMake(frame.width/14, frame.height/7, frame.width - frame.width/7, frame.height/10 ))
         keychainLabel.text = NSLocalizedString("Keychain", comment: "")
@@ -34,15 +34,15 @@ class TrousseauView: UIView, PBPebbleCentralDelegate, UITableViewDelegate, UITab
         keychainLabel.textAlignment = NSTextAlignment.Center
         keychainLabel.textColor = functions.UIColorFromRGB("FFFFFF", alpha: 1.0)
         self.addSubview(keychainLabel) // Adding the Pebble Gum logo to the view
-        
+
         tableView.frame = CGRectMake(0, keychainLabel.frame.origin.y + frame.height/10 + 40.0, frame.width, frame.height - keychainLabel.frame.origin.y - frame.height/10 - 40.0)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.clearColor()
         tableView.separatorColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.2)
-        
+
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
+
         self.addSubview(tableView)
 
     }

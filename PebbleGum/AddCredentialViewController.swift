@@ -64,7 +64,7 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
         categoryPicker.backgroundColor = theFunctions().UIColorFromRGB("FFFFFF", alpha: 0.12)
         categoryPicker.showsSelectionIndicator = true
         self.view.addSubview(categoryPicker)
-        
+
         // Credential Input Email/Username
         inputEmail = FloatLabelTextField(frame: CGRectMake(self.view.frame.width/14, self.view.frame.height/1.8, self.view.frame.width - self.view.frame.width/6, self.view.frame.height/14))
         inputEmail.attributedPlaceholder = NSAttributedString(string: String(format: NSLocalizedString("AddCredentialInputLogin", comment: "")), attributes:[NSForegroundColorAttributeName: theFunctions().UIColorFromRGB("D1CCC0", alpha: 0.8)])
