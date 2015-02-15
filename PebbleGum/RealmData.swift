@@ -15,8 +15,18 @@ class Credential: RLMObject {
     dynamic var credentialEmail = ""
     dynamic var credentialPassword = ""
     dynamic var credentialNotes = ""
+    dynamic var category: Category? // category is optional
     
     override class func primaryKey() -> String! {
         return "credentialId"
+    }
+}
+
+class Category: RLMObject {
+    dynamic var categoryName = ""
+    dynamic var categoryIcon = ""
+    
+    override class func primaryKey() -> String! {
+        return "categoryName"
     }
 }

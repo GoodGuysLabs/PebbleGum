@@ -44,6 +44,7 @@ class TrousseauView: UIView, PBPebbleCentralDelegate, UITableViewDelegate, UITab
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         self.addSubview(tableView)
+
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -61,33 +62,53 @@ class TrousseauView: UIView, PBPebbleCentralDelegate, UITableViewDelegate, UITab
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-        
+        self.tableView.registerClass(KeychainCustomCell.self, forCellReuseIdentifier: "cell")
+
+        let cell:KeychainCustomCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as KeychainCustomCell
+
         let cred: Credential = credentials.objectAtIndex(UInt(indexPath.row)) as Credential
-        cell.textLabel?.text = cred.credentialTitle
+        var credIcon = cred.category?.categoryIcon
+        cell.titleLabel.text = cred.credentialTitle
+        cell.iconLabel.text = String.fontAwesomeIconWithName(credIcon!)
+
+//        cell.textLabel?.text = cred.credentialTitle
+//        cell.detailTextLabel?.text = cred.category?.categoryName
 
         return cell
     }
-    
+
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.None)
         println("You selected cell #\(indexPath.row) !")
         
         let cred: Credential = credentials.objectAtIndex(UInt(indexPath.row)) as Credential
-        
-        println(cred.credentialEmail)
+
+        var pushToCred = CredentialDetailViewController(nibName: "CredentialDetailViewController", bundle: nil)
+        pushToCred.credTitle = cred.credentialTitle
+        pushToCred.credId = cred.credentialId
+        self.viewController?.navigationController?.pushViewController(pushToCred, animated: true)
     }
-    
+
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            let cred: Credential = credentials.objectAtIndex(UInt(indexPath.row)) as Credential
-            let realm = RLMRealm.defaultRealm()
-            var credentialToDelete = Credential.objectsWhere("credentialId = %d", cred.credentialId)
-            realm.beginWriteTransaction()
-            realm.deleteObject(credentialToDelete.firstObject() as RLMObject)
-            realm.commitWriteTransaction()
+            
+            let cred: Credential = self.credentials.objectAtIndex(UInt(indexPath.row)) as Credential
+            
+            let confirm = JSSAlertView().info(viewController!,
+                                title: NSLocalizedString("AlertDeleteCredentialTitle", comment: ""),
+                                text: String(format: NSLocalizedString("AlertDeleteCredentialMessage", comment: ""), cred.credentialTitle),
+                                buttonText: "Yes",
+                                cancelButtonText: "Nope")
 
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            confirm.addAction({ () -> Void in
+                let realm = RLMRealm.defaultRealm()
+                var credentialToDelete = Credential.objectsWhere("credentialId = %d", cred.credentialId)
+                realm.beginWriteTransaction()
+                realm.deleteObject(credentialToDelete.firstObject() as RLMObject)
+                realm.commitWriteTransaction()
+                
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            })
         }
     }
 

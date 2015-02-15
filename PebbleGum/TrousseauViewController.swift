@@ -28,7 +28,7 @@ class TrousseauViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     // MARK: - loadView
     override func loadView() {
         let view = TrousseauView(frame: UIScreen.mainScreen().bounds)
@@ -37,9 +37,16 @@ class TrousseauViewController: UIViewController {
         self.view = view
         println("> TrousseauViewController")
     }
-    
+
     func redirectToAddCredential(sender: UIBarButtonItem!) {
         var AddCredentialVCRedirect = AddCredentialViewController(nibName: "AddCredentialViewController", bundle: nil)
+        
+        // Edit animation
+//        UIView.animateWithDuration(0.5, animations: {
+//            self.navigationController?.pushViewController(AddCredentialVCRedirect, animated: false)
+//            UIView.setAnimationTransition(UIViewAnimationTransition.None, forView: self.navigationController!.view, cache: false)
+//        })
+
         self.navigationController?.pushViewController(AddCredentialVCRedirect, animated: true)
     }
 
@@ -55,3 +62,32 @@ class TrousseauViewController: UIViewController {
     
 }
 
+
+//class CustomCell: UITableViewCell {
+//    
+//    var theLabel:UILabel?
+//
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        
+//        self.theLabel?.frame = CGRectMake(80, 0, 250, 80)
+//        
+//    }
+////    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+////        super.init(style: UITableViewCellStyle.Value1, reuseIdentifier: reuseIdentifier)
+////    }
+////
+////    required init(coder aDecoder: NSCoder) {
+////        fatalError("init(coder:) has not been implemented")
+////    }
+//    
+////    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+////        var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+////        
+////        theLabel?.frame = CGRectMake(80, 0, 250, 80)
+////        
+////        return cell
+////    }
+//    
+//    
+//}

@@ -27,3 +27,7 @@
 "AddCredentialInputLogin"           =   "Email or username";
 "AddCredentialInputPassword"        =   "Password";
 "AddCredentialInputNotes"           =   "Add Notes";
+"AlertDeleteCredentialTitle"        =   "Delete credential ?";
+"AlertDeleteCredentialMessage"      =   "Are you sure you want to delete \"%@\" ?";
+"CredentialAddedTitle"              =   "Credential added";
+"CredentialAddedMessage"            =   "\"%@\" was added to your keychain";

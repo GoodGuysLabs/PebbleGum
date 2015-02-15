@@ -30,8 +30,9 @@
 		4B6727431A8FAA4000CD0A80 /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6727351A8FAA4000CD0A80 /* IQUIView+IQKeyboardToolbar.m */; };
 		4B6727441A8FAA4000CD0A80 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4B6727381A8FAA4000CD0A80 /* IQKeyboardManager.bundle */; };
 		4B6727481A8FBF7400CD0A80 /* RealmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6727471A8FBF7400CD0A80 /* RealmData.swift */; };
-		4B67274A1A8FFC5100CD0A80 /* CredentialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6727491A8FFC5100CD0A80 /* CredentialViewController.swift */; };
-		4B67274D1A90074800CD0A80 /* CredentialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B67274C1A90074800CD0A80 /* CredentialView.swift */; };
+		4B67274A1A8FFC5100CD0A80 /* CredentialDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6727491A8FFC5100CD0A80 /* CredentialDetailViewController.swift */; };
+		4B67274D1A90074800CD0A80 /* CredentialDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B67274C1A90074800CD0A80 /* CredentialDetailView.swift */; };
+		4B874A001A90429200E9DC7B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8749FF1A90429200E9DC7B /* CoreGraphics.framework */; };
 		4B8DEC821A7FA86500F3E3AD /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC811A7FA86500F3E3AD /* ExternalAccessory.framework */; };
 		4B8DEC841A7FA86C00F3E3AD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC831A7FA86C00F3E3AD /* libz.dylib */; };
 		4B8DEC861A7FA87100F3E3AD /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8DEC851A7FA87100F3E3AD /* CoreBluetooth.framework */; };
@@ -53,6 +54,7 @@
 		4BEBC7331A8C0324000BC773 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BEBC7321A8C0324000BC773 /* Realm.framework */; };
 		4BEBC7351A8C0343000BC773 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BEBC7341A8C0343000BC773 /* libc++.dylib */; };
 		4BEBC7371A8C034D000BC773 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBC7361A8C034D000BC773 /* RLMSupport.swift */; };
+		4BF08E0E1A90E9B800FD97FB /* KeychainCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF08E0D1A90E9B800FD97FB /* KeychainCustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,8 +110,9 @@
 		4B6727361A8FAA4000CD0A80 /* KeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardManager.h; sourceTree = "<group>"; };
 		4B6727381A8FAA4000CD0A80 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
 		4B6727471A8FBF7400CD0A80 /* RealmData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmData.swift; sourceTree = "<group>"; };
-		4B6727491A8FFC5100CD0A80 /* CredentialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialViewController.swift; sourceTree = "<group>"; };
-		4B67274C1A90074800CD0A80 /* CredentialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialView.swift; sourceTree = "<group>"; };
+		4B6727491A8FFC5100CD0A80 /* CredentialDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialDetailViewController.swift; sourceTree = "<group>"; };
+		4B67274C1A90074800CD0A80 /* CredentialDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialDetailView.swift; sourceTree = "<group>"; };
+		4B8749FF1A90429200E9DC7B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4B8DEC811A7FA86500F3E3AD /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		4B8DEC831A7FA86C00F3E3AD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		4B8DEC851A7FA87100F3E3AD /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
@@ -134,6 +137,7 @@
 		4BEBC7321A8C0324000BC773 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		4BEBC7341A8C0343000BC773 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		4BEBC7361A8C034D000BC773 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
+		4BF08E0D1A90E9B800FD97FB /* KeychainCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainCustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B874A001A90429200E9DC7B /* CoreGraphics.framework in Frameworks */,
 				4BEBC7351A8C0343000BC773 /* libc++.dylib in Frameworks */,
 				4B8DEC8A1A7FA87F00F3E3AD /* MessageUI.framework in Frameworks */,
 				4B8DEC881A7FA87A00F3E3AD /* CoreMotion.framework in Frameworks */,
@@ -167,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				4B0CFF6C1A7FBFD600104AF8 /* Frameworks */,
+				4B6726F21A8F7CCC00CD0A80 /* Functions */,
 				4B8DEC8B1A7FA8F200F3E3AD /* PebbleGum-Bridging-Header.h */,
 				4B0C64101A7DB5A400012978 /* PebbleGum */,
 				4B0C64291A7DB5A400012978 /* PebbleGumTests */,
@@ -230,7 +236,6 @@
 				4B36226F1A82DD4C0021E961 /* MainView */,
 				4B3622701A82DD5B0021E961 /* MenuView */,
 				4B925ADE1A8E7E440001E3E7 /* TrousseauView */,
-				4B6726F21A8F7CCC00CD0A80 /* Functions */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 		4B0CFF6C1A7FBFD600104AF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B8749FF1A90429200E9DC7B /* CoreGraphics.framework */,
 				4BEBC7361A8C034D000BC773 /* RLMSupport.swift */,
 				4BEBC7341A8C0343000BC773 /* libc++.dylib */,
 				4BEBC7321A8C0324000BC773 /* Realm.framework */,
@@ -306,6 +312,7 @@
 				4B6727451A8FB6D300CD0A80 /* FloatLabelText */,
 			);
 			name = Functions;
+			path = PebbleGum;
 			sourceTree = "<group>";
 		};
 		4B6727181A8FAA3600CD0A80 /* IQKeyBoardManager */ = {
@@ -406,22 +413,23 @@
 			name = RealmData;
 			sourceTree = "<group>";
 		};
-		4B67274B1A8FFC5A00CD0A80 /* CredentialView */ = {
+		4B67274B1A8FFC5A00CD0A80 /* CredentialDetailView */ = {
 			isa = PBXGroup;
 			children = (
-				4B6727491A8FFC5100CD0A80 /* CredentialViewController.swift */,
-				4B67274C1A90074800CD0A80 /* CredentialView.swift */,
+				4B6727491A8FFC5100CD0A80 /* CredentialDetailViewController.swift */,
+				4B67274C1A90074800CD0A80 /* CredentialDetailView.swift */,
 			);
-			name = CredentialView;
+			name = CredentialDetailView;
 			sourceTree = "<group>";
 		};
 		4B925ADE1A8E7E440001E3E7 /* TrousseauView */ = {
 			isa = PBXGroup;
 			children = (
 				4B925AE31A8EAFBA0001E3E7 /* AddCredentialView */,
-				4B67274B1A8FFC5A00CD0A80 /* CredentialView */,
+				4B67274B1A8FFC5A00CD0A80 /* CredentialDetailView */,
 				4B925ADF1A8E7E630001E3E7 /* TrousseauViewController.swift */,
 				4B925AE11A8E7EEE0001E3E7 /* TrousseauView.swift */,
+				4BF08E0D1A90E9B800FD97FB /* KeychainCustomCell.swift */,
 			);
 			name = TrousseauView;
 			sourceTree = "<group>";
@@ -575,15 +583,16 @@
 				4B6727481A8FBF7400CD0A80 /* RealmData.swift in Sources */,
 				4BB17AA81A88D4630054DA4B /* JSSAlertView.swift in Sources */,
 				4BEBC7371A8C034D000BC773 /* RLMSupport.swift in Sources */,
-				4B67274A1A8FFC5100CD0A80 /* CredentialViewController.swift in Sources */,
+				4B67274A1A8FFC5100CD0A80 /* CredentialDetailViewController.swift in Sources */,
 				4B67273D1A8FAA4000CD0A80 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				4B925AE51A8EAFE20001E3E7 /* AddCredentialViewController.swift in Sources */,
 				4B925AE21A8E7EEE0001E3E7 /* TrousseauView.swift in Sources */,
 				4B67273C1A8FAA4000CD0A80 /* IQKeyboardManager.m in Sources */,
 				4B925AEB1A8EBABC0001E3E7 /* FontAwesome.swift in Sources */,
 				4B925AE01A8E7E630001E3E7 /* TrousseauViewController.swift in Sources */,
+				4BF08E0E1A90E9B800FD97FB /* KeychainCustomCell.swift in Sources */,
 				4B67273E1A8FAA4000CD0A80 /* IQSegmentedNextPrevious.m in Sources */,
-				4B67274D1A90074800CD0A80 /* CredentialView.swift in Sources */,
+				4B67274D1A90074800CD0A80 /* CredentialDetailView.swift in Sources */,
 				4B925AE71A8EAFF90001E3E7 /* AddCredentialView.swift in Sources */,
 				4B0C64171A7DB5A400012978 /* PebbleGum.xcdatamodeld in Sources */,
 				4B0C643D1A7DBCE700012978 /* Functions.swift in Sources */,

@@ -2,25 +2,54 @@
 
 import UIKit
 
-func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor {
-    var scanner = NSScanner(string:colorCode)
-    var color:UInt32 = 0;
-    scanner.scanHexInt(&color)
+let defaultCategories: Dictionary<String, String> = [
+    "Password":     "fa-key",
+    "Secret":       "fa-user-secret",
+    "Code":         "fa-code",
+    "Apple":        "fa-apple",
+    "Behance":      "fa-behance-square",
+    "Bitbucket":    "fa-bitbucket-square",
+    "Codepen":      "fa-codepen",
+    "Database":     "fa-database",
+    "DeviantArt":   "fa-devianart",
+    "Digg":         "fa-digg",
+    "Dropbox":      "fa-dropbox",
+    "Email":        "fa-envelope-square",
+    "Facebook":     "fa-facebook-official",
+    "Flickr":       "fa-flickr",
+    "Foursquare":   "fa-foursquare",
+    "Github":       "fa-github-square",
+    "Google":       "fa-google",
+    "Google+":      "fa-google-plus",
+    "Instagram":    "fa-instagram",
+    "LastFM":       "fa-lastfm",
+    "LinkedIn":     "fa-linkedin",
+    "Linux":        "fa-linux",
+    "Live":         "fa-windows",
+    "MaxCDN":       "fa-maxcdn",
+    "Medium":       "fa-medium",
+    "Paypal":       "fa-paypal",
+    "Pinterest":    "fa-pinterest-p",
+    "Reddit":       "fa-reddit",
+    "Skype":        "fa-skype",
+    "Slideshare":   "fa-slideshare",
+    "Soundcloud":   "fa-soundcloud",
+    "Spotify":      "fa-spotify",
+    "Stack Overflow":"fa-stack-overflow",
+    "Steam":        "fa-steam",
+    "Twitch":       "fa-twitch",
+    "Twitter":      "fa-twitter",
+    "Vimeo":        "fa-vimeo",
+    "Vine":         "fa-vine",
+    "VK":           "fa-vk",
+    "WhatsApp":     "fa-whatsapp",
+    "Wordpress":    "fa-wordpress",
+    "Yahoo":        "fa-yahoo",
+    "Youtube":      "fa-youtube"
+]
+
+for (name, icon) in defaultCategories {
     
-    let mask = 0x000000FF
-    let r = CGFloat(Float(Int(color >> 16) & mask)/255.0)
-    let g = CGFloat(Float(Int(color >> 8) & mask)/255.0)
-    let b = CGFloat(Float(Int(color) & mask)/255.0)
+    icon
     
-    return UIColor(red: r, green: g, blue: b, alpha: CGFloat(alpha))
 }
-
-var myLabel:UILabel?
-
-myLabel?.textColor = UIColorFromRGB("bb0000", alpha: 1.0)
-
-let frame = UIScreen.mainScreen().bounds // Creating a frame and taking all the space of the screen
-let view = UIView(frame: UIScreen.mainScreen().bounds) // Creating the view with the frame
-
-// MARK: — PebbleGum Logo Configuration
-myLabel = UILabel(frame: CGRectMake(frame.width/3.0, 0, 100, 100))

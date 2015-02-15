@@ -94,7 +94,7 @@ class MenuView: UIView, PBPebbleCentralDelegate, UITableViewDelegate, UITableVie
             case 2:
                 println(cell?.textLabel?.text)
             default:
-                println("Nope")
+                fatalError("It shouldn't reach this message.")
         }
 
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)

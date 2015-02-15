@@ -9,14 +9,16 @@
 import UIKit
 import Realm
 
-class AddCredentialViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class AddCredentialViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let functions = theFunctions()
     let connectedPebble: AnyObject = theFunctions().pebbleInfos()
     var inputTitle:FloatLabelTextField!
+    var categoryPicker:UIPickerView!
     var inputEmail:FloatLabelTextField!
     var inputPassword:FloatLabelTextField!
     var inputNotes:UITextView!
+    let theCategories = Category.allObjects().sortedResultsUsingProperty("categoryName", ascending: true)
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
     {
@@ -41,7 +43,7 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "TextDidBeginEditing:", name: UITextFieldTextDidBeginEditingNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "TextDidEndEditing:", name: UITextFieldTextDidEndEditingNotification, object: nil)
-
+        
         // Credential Input Title
         inputTitle = FloatLabelTextField(frame: CGRectMake(self.view.frame.width - self.view.frame.width/1.5, self.view.frame.height/6, self.view.frame.width - self.view.frame.width/2.3, self.view.frame.height/14))
         inputTitle.attributedPlaceholder = NSAttributedString(string: String(format: NSLocalizedString("AddCredentialInputTitle", comment: "")), attributes:[NSForegroundColorAttributeName: theFunctions().UIColorFromRGB("D1CCC0", alpha: 0.8)])
@@ -54,8 +56,15 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
         inputTitle.keyboardAppearance = .Dark
         self.view.addSubview(inputTitle)
 
+        // Credential Category Picker View
+        categoryPicker = UIPickerView(frame: CGRectMake(self.view.frame.width/14, self.view.frame.height/3.5, self.view.frame.width - self.view.frame.width/6, self.view.frame.height/12))
+        categoryPicker.delegate = self
+        categoryPicker.backgroundColor = theFunctions().UIColorFromRGB("FFFFFF", alpha: 0.12)
+        categoryPicker.showsSelectionIndicator = true
+        self.view.addSubview(categoryPicker)
+        
         // Credential Input Email/Username
-        inputEmail = FloatLabelTextField(frame: CGRectMake(self.view.frame.width/14, self.view.frame.height/3, self.view.frame.width - self.view.frame.width/6, self.view.frame.height/14))
+        inputEmail = FloatLabelTextField(frame: CGRectMake(self.view.frame.width/14, self.view.frame.height/1.8, self.view.frame.width - self.view.frame.width/6, self.view.frame.height/14))
         inputEmail.attributedPlaceholder = NSAttributedString(string: String(format: NSLocalizedString("AddCredentialInputLogin", comment: "")), attributes:[NSForegroundColorAttributeName: theFunctions().UIColorFromRGB("D1CCC0", alpha: 0.8)])
         inputEmail.titleActiveTextColour = theFunctions().UIColorFromRGB("FFFFFF", alpha: 0.5)
         inputEmail.backgroundColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.12)
@@ -70,7 +79,7 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
         self.view.addSubview(inputEmail)
 
         // Credential Input Password
-        inputPassword = FloatLabelTextField(frame: CGRectMake(self.view.frame.width/14, self.view.frame.height/2.2, self.view.frame.width - self.view.frame.width/6, self.view.frame.height/14))
+        inputPassword = FloatLabelTextField(frame: CGRectMake(self.view.frame.width/14, self.view.frame.height/1.5, self.view.frame.width - self.view.frame.width/6, self.view.frame.height/14))
         inputPassword.attributedPlaceholder = NSAttributedString(string: String(format: NSLocalizedString("AddCredentialInputPassword", comment: "")), attributes:[NSForegroundColorAttributeName: theFunctions().UIColorFromRGB("D1CCC0", alpha: 0.8)])
         inputPassword.titleActiveTextColour = theFunctions().UIColorFromRGB("FFFFFF", alpha: 0.5)
         inputPassword.backgroundColor = functions.UIColorFromRGB("FFFFFF", alpha: 0.12)
@@ -86,7 +95,7 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
         self.view.addSubview(inputPassword)
 
         // Credential Input Notes
-        inputNotes = UITextView(frame: CGRectMake(self.view.frame.width/14, self.view.frame.height/1.65, self.view.frame.width - self.view.frame.width/6, self.view.frame.height/7))
+        inputNotes = UITextView(frame: CGRectMake(self.view.frame.width/14, self.view.frame.height/1.3, self.view.frame.width - self.view.frame.width/6, self.view.frame.height/7))
         inputNotes.delegate = self
         inputNotes.text = NSLocalizedString("AddCredentialInputNotes", comment: "")
         inputNotes.backgroundColor = theFunctions().UIColorFromRGB("FFFFFF", alpha: 0.12)
@@ -94,9 +103,6 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
         inputNotes.keyboardAppearance = .Dark
         inputNotes.tag = 4
         self.view.addSubview(inputNotes)
-
-        println(Credential.allObjects())
-
     }
     
     // MARK: - loadView
@@ -113,6 +119,8 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
         let realm = RLMRealm.defaultRealm()
         let getCredentials = Credential.allObjects()
         let newCredential = Credential()
+        let theCategory = Category.allObjects().firstObject() as Category
+        // let catName = theCategory.categoryName
         
         if ( getCredentials.count != 0 ) {
             let crementalId: AnyObject = getCredentials.lastObject() as Credential
@@ -125,24 +133,29 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
         newCredential.credentialEmail = inputEmail.text
         newCredential.credentialPassword = inputPassword.text
         newCredential.credentialNotes = inputNotes.text
-        
+        newCredential.category = theCategory
+//        newCredential.category = catName
+
         realm.beginWriteTransaction()
         realm.addOrUpdateObject(newCredential)
         realm.commitWriteTransaction()
         
-        let confirmEntry = JSSAlertView().success(self, title: NSLocalizedString("CredentialAdded", comment: "Alert UI title when creating a new credential entry after tapping the button Done"))
+        let confirmEntry = JSSAlertView().success(self,
+                                                    title: String(format: NSLocalizedString("CredentialAddedTitle", comment: "Alert UI title when creating a new credential entry after tapping the button Done")),
+                                                    text: String(format: NSLocalizedString("CredentialAddedMessage", comment: "Alert UI message when creating a new credential entry after tapping the button Done"), inputTitle.text)
+                                                 )
 
         confirmEntry.addAction({ () -> Void in
             var afterEntryRedirect = TrousseauViewController(nibName: "TrousseauViewController", bundle: nil)
             self.navigationController?.popViewControllerAnimated(true)
         })
     }
-    
+
     func TextDidBeginEditing(sender: AnyObject) {
-        
+
         let theTextField:FloatLabelTextField = sender.object! as FloatLabelTextField
         let thePlaceholder = theTextField.placeholder
-        
+
         theTextField.backgroundColor = theFunctions().UIColorFromRGB("FFFFFF", alpha: 0.5)
         theTextField.textColor = theFunctions().UIColorFromRGB("46474f")
         theTextField.attributedPlaceholder = NSAttributedString(string: thePlaceholder!, attributes:[NSForegroundColorAttributeName: theFunctions().UIColorFromRGB("434553", alpha: 0.8)])
@@ -153,7 +166,7 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
         }
         
     }
-    
+
     func TextDidEndEditing(sender: AnyObject) {
         
         let theTextField:FloatLabelTextField = sender.object! as FloatLabelTextField
@@ -169,22 +182,49 @@ class AddCredentialViewController: UIViewController, UITextFieldDelegate, UIText
         }
 
     }
-    
+
     func textViewDidBeginEditing(textView: UITextView) {
         if (textView.text == NSLocalizedString("AddCredentialInputNotes", comment: "") ) {
             textView.text = ""
         }
     }
     
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Int(theCategories.count)
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        println("GOT IT")
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        
+        let cat: Category = theCategories.objectAtIndex(UInt(row)) as Category
+        var catName = cat.categoryName
+
+        return catName
+    }
+    
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let cat: Category = theCategories.objectAtIndex(UInt(row)) as Category
+        let attributedString = NSAttributedString(string: cat.categoryName, attributes: [NSForegroundColorAttributeName:theFunctions().UIColorFromRGB("FFFFFF", alpha: 0.8)])
+
+        return attributedString
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     required init(coder aDecoder: NSCoder)
     {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 }
 
