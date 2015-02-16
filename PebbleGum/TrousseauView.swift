@@ -27,7 +27,7 @@ class TrousseauView: UIView, PBPebbleCentralDelegate, UITableViewDelegate, UITab
         imageView!.image = UIImage(named:"background.png")
         self.addSubview(imageView!) // Adding the background image to the view
 
-        // MARK: Label: PebbleGum Logo Configuration
+        // MARK: Label: Keychain Label Configuration
         keychainLabel = UILabel(frame: CGRectMake(frame.width/14, frame.height/7, frame.width - frame.width/7, frame.height/10 ))
         keychainLabel.text = NSLocalizedString("Keychain", comment: "")
         keychainLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: frame.width/6)

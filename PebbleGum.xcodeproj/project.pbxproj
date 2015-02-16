@@ -15,6 +15,8 @@
 		4B0C643D1A7DBCE700012978 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C643C1A7DBCE700012978 /* Functions.swift */; };
 		4B36226C1A82BB640021E961 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B36226B1A82BB640021E961 /* MenuViewController.swift */; };
 		4B36226E1A82BBF60021E961 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B36226D1A82BBF60021E961 /* MenuView.swift */; };
+		4B411D231A91374500848264 /* GenerateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B411D221A91374500848264 /* GenerateViewController.swift */; };
+		4B411D251A9137CC00848264 /* GenerateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B411D241A9137CC00848264 /* GenerateView.swift */; };
 		4B6726F41A8F7CF200CD0A80 /* FloatLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6726F31A8F7CF200CD0A80 /* FloatLabelTextField.swift */; };
 		4B6726F61A8F826C00CD0A80 /* FloatLabelTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6726F51A8F826C00CD0A80 /* FloatLabelTextView.swift */; };
 		4B6727391A8FAA4000CD0A80 /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B67271B1A8FAA4000CD0A80 /* IQNSArray+Sort.m */; };
@@ -81,6 +83,8 @@
 		4B0C643E1A7DC14800012978 /* GoodGuysPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = GoodGuysPlayground.playground; path = PebbleGumTests/GoodGuysPlayground.playground; sourceTree = SOURCE_ROOT; };
 		4B36226B1A82BB640021E961 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4B36226D1A82BBF60021E961 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		4B411D221A91374500848264 /* GenerateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateViewController.swift; sourceTree = "<group>"; };
+		4B411D241A9137CC00848264 /* GenerateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateView.swift; sourceTree = "<group>"; };
 		4B6726F31A8F7CF200CD0A80 /* FloatLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatLabelTextField.swift; sourceTree = "<group>"; };
 		4B6726F51A8F826C00CD0A80 /* FloatLabelTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatLabelTextView.swift; sourceTree = "<group>"; };
 		4B67271A1A8FAA4000CD0A80 /* IQNSArray+Sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQNSArray+Sort.h"; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 				4B36226F1A82DD4C0021E961 /* MainView */,
 				4B3622701A82DD5B0021E961 /* MenuView */,
 				4B925ADE1A8E7E440001E3E7 /* TrousseauView */,
+				4B411D211A91360E00848264 /* GenerateView */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -300,6 +305,15 @@
 				4B36226D1A82BBF60021E961 /* MenuView.swift */,
 			);
 			name = MenuView;
+			sourceTree = "<group>";
+		};
+		4B411D211A91360E00848264 /* GenerateView */ = {
+			isa = PBXGroup;
+			children = (
+				4B411D221A91374500848264 /* GenerateViewController.swift */,
+				4B411D241A9137CC00848264 /* GenerateView.swift */,
+			);
+			name = GenerateView;
 			sourceTree = "<group>";
 		};
 		4B6726F21A8F7CCC00CD0A80 /* Functions */ = {
@@ -543,14 +557,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		50524F424C454D533F /* Run Script */ = {
+		50524F424C454D533F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,6 +571,9 @@
 			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
+
+
+
 
 /* Begin PBXSourcesBuildPhase section */
 		4B0C640A1A7DB5A400012978 /* Sources */ = {
@@ -571,6 +587,7 @@
 				4B36226E1A82BBF60021E961 /* MenuView.swift in Sources */,
 				4B6726F41A8F7CF200CD0A80 /* FloatLabelTextField.swift in Sources */,
 				4B6727421A8FAA4000CD0A80 /* IQToolbar.m in Sources */,
+				4B411D251A9137CC00848264 /* GenerateView.swift in Sources */,
 				4B0C64191A7DB5A400012978 /* MainViewController.swift in Sources */,
 				4B6727401A8FAA4000CD0A80 /* IQBarButtonItem.m in Sources */,
 				4B67273A1A8FAA4000CD0A80 /* IQUIView+Hierarchy.m in Sources */,
@@ -583,6 +600,7 @@
 				4B6727481A8FBF7400CD0A80 /* RealmData.swift in Sources */,
 				4BB17AA81A88D4630054DA4B /* JSSAlertView.swift in Sources */,
 				4BEBC7371A8C034D000BC773 /* RLMSupport.swift in Sources */,
+				4B411D231A91374500848264 /* GenerateViewController.swift in Sources */,
 				4B67274A1A8FFC5100CD0A80 /* CredentialDetailViewController.swift in Sources */,
 				4B67273D1A8FAA4000CD0A80 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				4B925AE51A8EAFE20001E3E7 /* AddCredentialViewController.swift in Sources */,

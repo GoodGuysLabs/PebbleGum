@@ -84,14 +84,26 @@ class MenuView: UIView, PBPebbleCentralDelegate, UITableViewDelegate, UITableVie
         
         switch (indexPath.row) {
             case 0:
-                var anotherVC = TrousseauViewController(nibName: "TrousseauViewController", bundle: nil)
+                let anotherVC = TrousseauViewController(nibName: "TrousseauViewController", bundle: nil)
                 let backBarButton: UIBarButtonItem = UIBarButtonItem(title: NSLocalizedString("BackMenu", comment: "Back button title"), style: .Bordered, target: nil, action: nil)
                 self.viewController?.navigationItem.backBarButtonItem = backBarButton
                 self.viewController?.navigationController?.pushViewController(anotherVC, animated: true)
                 println(cell?.textLabel?.text)
             case 1:
                 println(cell?.textLabel?.text)
+//                popupViewController.modalPresentationStyle = .Popover
+//                popupViewController.preferredContentSize = CGSizeMake(50, 100)
+//            
+//                let popoverViewController = popupViewController.popoverPresentationController
+//                popoverViewController?.permittedArrowDirections = .Any
+//                popoverViewController?.delegate = self
+//                popoverViewController?.sourceView = self
+//                popoverViewController?.sourceRect = CGRect(x: 50 , y: 50, width: 1, height: 1)
             case 2:
+                let popupViewController = GenerateViewController(nibName: "GenerateViewController", bundle: nil)
+                let backBarButton: UIBarButtonItem = UIBarButtonItem(title: NSLocalizedString("BackMenu", comment: "Back button title"), style: .Bordered, target: nil, action: nil)
+                self.viewController?.navigationItem.backBarButtonItem = backBarButton
+                self.viewController?.navigationController?.pushViewController(popupViewController, animated: true)
                 println(cell?.textLabel?.text)
             default:
                 fatalError("It shouldn't reach this message.")

@@ -33,3 +33,10 @@
 "CredentialAddedMessage"            =   "\"%@\" was added to your keychain";
 "CredentialModifiedTitle"           =   "Credential modified";
 "CredentialModifiedMessage"         =   "\"%@\" has been modified";
+"GenerateTitle"                     =   "Generate";
+"GeneratePasswordInput"             =   "Password";
+"CopyPasswordButton"                =   "Copy Password";
+"GeneratePasswordButton"            =   "Generate";
+"LengthInput"                       =   "Length";
+"PasswordCopiedTitle"               =   "Password copied !";
+"PasswordCopiedMessage"             =   "Do you want to save it ?";
